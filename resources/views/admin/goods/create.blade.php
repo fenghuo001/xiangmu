@@ -1,49 +1,46 @@
 @extends('admin.index')
+
 @section('kuang')
-<div class="col-md-12">
-    <h1 class="page-head-line">添加商品</h1>
-</div> 
-<div class="panel panel-info">
-<div class="panel-heading">
-   BASIC FORM
-</div>
-<div class="panel-body">
-    <form role="form" action="/goods" method="post" enctype="multipart/form-data">
+<h1 class="page-head-line">商品添加</h1>
+@endsection
+
+@section('zhuti')
+<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+	<div class="panel panel-danger">
+		<div class="panel-heading">
+		   ADD GOODS
+		</div>
+		<div class="panel-body">
+		    <form role="form" action="/goods" method="post" enctype="multipart/form-data">
                 <div class="form-group">
-                    <label>商品名称:</label>
-                    <input class="form-control" type="text" name="name">
-                    
+                    <label>商品名称</label>
+                    <input class="form-control" type="text" name="title">
                 </div>
-         <div class="form-group">
-                    <label>商品介绍:</label>
-                    <input class="form-control" type="text" name="cons">
-           
+		        <div class="form-group">
+                    <label>商品原价</label>
+                    <input class="form-control" type="text" name="spyj">
                 </div>
-                <div class="form-group">
-                    <label>原价</label>
-                    <input class="form-control" type="text" name="yuanjia">
-            
-                </div>
-                <div class="form-group">
-                    <label>现价:</label>
-                    <input class="form-control" type="text" name="xianjia">
-            
+		        <div class="form-group">
+                    <label>商品现价</label>
+                    <input class="form-control" type="text" name="spxj">
                 </div>
                 <div class="form-group">
-                    <label>库存:</label>
-                    <input class="form-control" type="text" name="kucun">
-            
+                    <label>商品库存</label>
+                    <input class="form-control" type="text" name="spkc">
+                </div>
+                <div class="form-group">
+                    <label>商品详情</label>
+                    <textarea name="cons" cols="52" rows="5"></textarea>
                 </div>
                 <div class="form-group">
                     <label>商品图片</label>
-                    <input class="form-control" rows="3" type="file" name="imgs" style="border:0px;">
+                    <input class="form-control" type="file" name="file[]" multiple>
                 </div>
-          		{{csrf_field()}}
-         			
-                <button type="submit" class="btn btn-info" style="width:100px;">添加</button>
-            </form>
-    </div>
-</div>              
-@endsection    
-
-
+                {{csrf_field()}}
+		        <button type="submit" class="btn btn-success btn-md col-md-offset-4">添加</button>
+		        <button type="reset" class="btn btn-danger">重置</button>
+		    </form>
+		</div>
+	</div>
+</div>
+@endsection

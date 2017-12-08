@@ -12,24 +12,10 @@ class GoodsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-       
-        $num = $request->input('num',10);
-       
-        $keywords = $request->input('keywords');
-
-       if($request->has('keywords')){
-             $goods = DB::table('goods')->where('name','like','%'.$keywords.'%')->paginate($num);
-         }else{
-            $goods = DB::table('goods')->paginate($num); 
-        }
-        
-
-        return view('admin.goods.index',[
-            'goods'=>$goods,
-            'keywords'=>$keywords
-            ]);      
+        $goods = DB::table('goods')->paginate(10);
+        return view('/admin/goods/index',['goods'=>$goods]);
     }
 
     /**
@@ -39,7 +25,7 @@ class GoodsController extends Controller
      */
     public function create()
     {
-        return view('admin.goods.create');
+        return view('/admin/goods/create');
     }
 
     /**
@@ -50,22 +36,32 @@ class GoodsController extends Controller
      */
     public function store(Request $request)
     {
-        $date = $request->except('_token');
-        //$date = $request->all();
-       // dd($date);die;
-        if($request->hasFile('imgs')){
-            $suffix = $request->file('imgs')->extension();
-            $name = uniqid('img').'.'.$suffix;
-            $dir = './uploads/'.date('Y-m-d');
-            $request->file('imgs')->move($dir,$name);
-            $date['imgs'] = trim($dir.'/'.$name,'.');
-        }
+        $data = $request->only(['title','spyj','spxj','spkc','cons']);
 
-          if(DB::table('goods')->insert($date)){
-            return redirect('/goods')->with('msg','添加成功');
-          }else{
-            return back()->with('msg','添加失败');
-          }
+        $data['addtime'] = date('Y-m-d H:i:s');
+
+        $id = DB::table('goods')->insertGetId($data);
+        // dd($id);
+        if($id > 0){
+            if($request->hasFile('file')){
+                $images = [];
+                foreach($request->file('file') as $k=>$v){
+                    $tmp = [];
+                    $suffix = $v->extension();
+                    $name = uniqid('sp').'.'.$suffix;
+                    $dir = './uploads/'.date('Y-m-d');
+                    $v->move($dir,$name);
+
+                    $tmp['spid'] = $id;
+                    $tmp['imgs'] = trim($dir.'/'.$name,'.');
+                    $images[] = $tmp;
+                }
+                DB::table('goods_img')->insert($images);
+            }
+            return redirect('/goods')->with('msg','添加成功 :)');
+        }else{
+            return redirect('/goods')->with('msg','添加失败 :(');
+        }
     }
 
     /**
@@ -76,7 +72,11 @@ class GoodsController extends Controller
      */
     public function show($id)
     {
-        //
+        $goods = DB::table('goods')->where('id',$id)->first();
+        $goods_img = DB::table('goods_img')->where('spid',$id)->get();
+
+
+        return view('home.xiangqing.xiangqing',compact('goods','goods_img'));
     }
 
     /**
@@ -100,21 +100,14 @@ class GoodsController extends Controller
      */
     public function update(Request $request, $id)
     {
+        //dd($request->all());die;
         $date = $request->except(['_token','_method']);
-
-        if($request->hasFile('imgs')){
-            $suffix = $request->file('imgs')->extension();
-            $name = uniqid('img').'.'.$suffix;
-            $dir = './uploads/'.date('Y-m-d');
-            $request->file('imgs')->move($dir,$name);
-            $date['imgs'] = trim($dir.'/'.$name,'.');
+        // dd($date);
+        if(DB::table('goods')->where('id',$id)->update($date)){
+            return redirect('/goods')->with('msg','更新成功 :)');
+        }else{
+            return back()->with('msg','更新失败 :(');
         }
-
-          if(DB::table('goods')->where('id',$id)->update($date)){
-            return redirect('/goods')->with('msg','更新成功');
-          }else{
-            return back()->with('msg','更新失败');
-          }
     }
 
     /**
@@ -125,10 +118,10 @@ class GoodsController extends Controller
      */
     public function destroy($id)
     {
-        if($date = DB::table('goods')->where('id',$id)->delete()){
-            return back()->with('msg','删除成功');
+        if(DB::table('goods')->where('id',$id)->delete()){
+            return back()->with('msg','删除成功 :)');
         }else{
-            return back()->with('msg','删除失败');
+            return back()->with('msg','删除失败 :(');
         }
     }
 }

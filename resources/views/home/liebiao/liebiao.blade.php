@@ -21,94 +21,19 @@
         <div class="row">
             <!-- 左边栏开始 -->
             <div id="sidebar" class="col-lg-2">
-                <!-- 相关分类模块 -->
-                <div class="widget mb10">
-                    <h5 class="widget-tit pl10 fb">相关分类</h5>
-                    <div class="panel-group" id="accordion">
-                        <div class="panel">
-                            <div class="panel-title">
-                                <h5 class="fb pl10">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">电脑配件</a>
-                                </h5>
-                            </div>
-                            <div id="collapseOne" class="panel-collapse collapse in">
-                                <div class="panel-list">
-                                    <ul>
-                                        <li><a href="">CPU</a></li>
-                                        <li><a href="">声卡/扩展卡</a></li>
-                                        <li><a href="">刻录机/光驱</a></li>
-                                        <li><a href="">主板</a></li>
-                                        <li><a href="">刻录机/光驱</a></li>
-                                        <li><a href="">声卡/扩展卡</a></li>
-                                        <li><a href="">刻录机/光驱</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel">
-                            <div class="panel-title">
-                                <h5 class="fb pl10">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">运动服</a>
-                                </h5>
-                            </div>
-                            <div id="collapseTwo" class="panel-collapse collapse">
-                                <div class="panel-list">
-                                    <ul>
-                                        <li><a href="">CPU</a></li>
-                                        <li><a href="">声卡/扩展卡</a></li>
-                                        <li><a href="">刻录机/光驱</a></li>
-                                        <li><a href="">主板</a></li>
-                                        <li><a href="">刻录机/光驱</a></li>
-                                        <li><a href="">声卡/扩展卡</a></li>
-                                        <li><a href="">刻录机/光驱</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel">
-                            <div class="panel-title">
-                                <h5 class="fb pl10">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">运动配件</a>
-                                </h5>
-                            </div>
-                            <div id="collapseThree" class="panel-collapse collapse">
-                                <div class="panel-list">
-                                    <ul>
-                                        <li><a href="">CPU</a></li>
-                                        <li><a href="">声卡/扩展卡</a></li>
-                                        <li><a href="">刻录机/光驱</a></li>
-                                        <li><a href="">主板</a></li>
-                                        <li><a href="">刻录机/光驱</a></li>
-                                        <li><a href="">声卡/扩展卡</a></li>
-                                        <li><a href="">刻录机/光驱</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
                 <!-- 商品推荐 -->
                 <div class="widget mb10">
                     <h5 class="widget-tit pl10 fb">热门商品推荐</h5>
                     <ul class="widget-list-3">
+                        @foreach($hot as $k=>$v)
                         <li>
                             <a href="">
                                 <img class="center-block" alt="" src="/h_assets/img/advertise/ad-2.jpg" /></a>
-                            <div class="summary"><a href="">美的（Midea） MRO102C-4 反渗透 净水机</a></div>
+                            <div class="summary"><a href="">{{$v->title}}</a></div>
                             <div class="price"><b class="f18">￥799</b> <span class="f12 ml10 red-font"><i class="icon-lower mr10">直降</i>已优惠 ￥481</span></div>
                         </li>
-                        <li>
-                            <a href="">
-                                <img class="center-block" alt="" src="/h_assets/img/advertise/ad-2.jpg" /></a>
-                            <div class="summary"><a href="">美的（Midea） MRO102C-4 反渗透 净水机</a></div>
-                            <div class="price"><b class="f18">￥799</b> <span class="f12 ml10 red-font"><i class="icon-lower mr10">直降</i>已优惠 ￥481</span></div>
-                        </li>
-                        <li>
-                            <a href="">
-                                <img class="center-block" alt="" src="/h_assets/img/advertise/ad-2.jpg" /></a>
-                            <div class="summary"><a href="">美的（Midea） MRO102C-4 反渗透 净水机</a></div>
-                            <div class="price"><b class="f18">￥799</b> <span class="f12 ml10 red-font"><i class="icon-lower mr10">直降</i>已优惠 ￥481</span></div>
-                        </li>
+                        @endforeach
                     </ul>
                 </div>
                 <!-- 浏览记录推荐 -->
@@ -155,34 +80,15 @@
                     <div class="list-item-title pl10 f14 tit-family "><i class="icon-main icon-recom mr5"></i>热卖推荐</div>
                     <div class="recommend-list">
                         <ul>
+                            @foreach($hot as $k=>$v)
                             <li>
                                 <a href="">
                                     <img alt="" class="pull-left center-block" src="/h_assets/img/advertise/ad-2.jpg" /></a>
-                                <div class="summary"><a href="">安踏Anta男鞋跑步鞋-11245507-4</a></div>
-                                <div class="price"><b>¥227.00</b></div>
-                                <button type="button" class="btn btn-danger btn-xs">立即抢购</button>
+                                <div class="summary"><a href="">{{$v->title}}</a></div>
+                                <div class="price"><b>¥{{$v->spxj}}</b></div>
+                                <a href="/goods/{{$v->id}}" type="button" class="btn btn-danger btn-xs">立即抢购</a>
                             </li>
-                            <li>
-                                <a href="">
-                                    <img alt="" class="pull-left center-block" src="/h_assets/img/advertise/ad-2.jpg" /></a>
-                                <div class="summary"><a href="">安踏Anta男鞋跑步鞋-11245507-4</a></div>
-                                <div class="price"><b>¥227.00</b></div>
-                                <button type="button" class="btn btn-danger btn-xs">立即抢购</button>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <img alt="" class="pull-left center-block" src="/h_assets/img/advertise/ad-2.jpg" /></a>
-                                <div class="summary"><a href="">安踏Anta男鞋跑步鞋-11245507-4</a></div>
-                                <div class="price"><b>¥227.00</b></div>
-                                <button type="button" class="btn btn-danger btn-xs">立即抢购</button>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <img alt="" class="pull-left center-block" src="/h_assets/img/advertise/ad-2.jpg" /></a>
-                                <div class="summary"><a href="">安踏Anta男鞋跑步鞋-11245507-4</a></div>
-                                <div class="price"><b>¥227.00</b></div>
-                                <button type="button" class="btn btn-danger btn-xs">立即抢购</button>
-                            </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
@@ -313,114 +219,17 @@
                     <div class="clearfix"></div>
                     <div class="pro-list-show">
                         <ul>
+                            @foreach($good as $k=>$v)
                             <li>
-                                <a href="">
+                                <a href="/goods/{{$v->id}}">
                                     <img class="center-block" alt="" src="/h_assets/img/advertise/ad-2.jpg" /></a>
-                                <div class="summary"><a href="">adidas阿迪达斯2013夏季新款女子跑步鞋Q22344</a></div>
-                                <div class="price"><span class="pull-right red-font">返129积分</span><b>￥402.00</b></div>
+                                <div class="summary"><a href="">{{$v->title}}</a></div>
+                                <div class="price"><span class="pull-right red-font">返129积分</span><b>￥{{$v->spxj}}</b></div>
                                 <div class="list-show-eva"><i class="icon-main icon-eva-6"></i><a href="">已有215人评价</a></div>
                                 <button type="button" class="btn btn-default btn-xs">加入购物车</button>
                                 <button type="button" class="btn btn-default btn-xs">收藏</button>
                             </li>
-                            <li>
-                                <a href="">
-                                    <img class="center-block" alt="" src="/h_assets/img/advertise/ad-2.jpg" /></a>
-                                <div class="summary"><a href="">adidas阿迪达斯2013夏季新款女子跑步鞋Q22344</a></div>
-                                <div class="price"><span class="pull-right red-font">返129积分</span><b>￥402.00</b></div>
-                                <div class="list-show-eva"><i class="icon-main icon-eva-6"></i><a href="">已有215人评价</a></div>
-                                <button type="button" class="btn btn-default btn-xs">加入购物车</button>
-                                <button type="button" class="btn btn-default btn-xs">收藏</button>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <img class="center-block" alt="" src="/h_assets/img/advertise/ad-2.jpg" /></a>
-                                <div class="summary"><a href="">adidas阿迪达斯2013夏季新款女子跑步鞋Q22344</a></div>
-                                <div class="price"><span class="pull-right red-font">返129积分</span><b>￥402.00</b></div>
-                                <div class="list-show-eva"><i class="icon-main icon-eva-6"></i><a href="">已有215人评价</a></div>
-                                <button type="button" class="btn btn-default btn-xs">加入购物车</button>
-                                <button type="button" class="btn btn-default btn-xs">收藏</button>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <img class="center-block" alt="" src="/h_assets/img/advertise/ad-2.jpg" /></a>
-                                <div class="summary"><a href="">adidas阿迪达斯2013夏季新款女子跑步鞋Q22344</a></div>
-                                <div class="price"><span class="pull-right red-font">返129积分</span><b>￥402.00</b></div>
-                                <div class="list-show-eva"><i class="icon-main icon-eva-6"></i><a href="">已有215人评价</a></div>
-                                <button type="button" class="btn btn-default btn-xs">加入购物车</button>
-                                <button type="button" class="btn btn-default btn-xs">收藏</button>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <img class="center-block" alt="" src="/h_assets/img/advertise/ad-2.jpg" /></a>
-                                <div class="summary"><a href="">adidas阿迪达斯2013夏季新款女子跑步鞋Q22344</a></div>
-                                <div class="price"><span class="pull-right red-font">返129积分</span><b>￥402.00</b></div>
-                                <div class="list-show-eva"><i class="icon-main icon-eva-6"></i><a href="">已有215人评价</a></div>
-                                <button type="button" class="btn btn-default btn-xs">加入购物车</button>
-                                <button type="button" class="btn btn-default btn-xs">收藏</button>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <img class="center-block" alt="" src="/h_assets/img/advertise/ad-2.jpg" /></a>
-                                <div class="summary"><a href="">adidas阿迪达斯2013夏季新款女子跑步鞋Q22344</a></div>
-                                <div class="price"><span class="pull-right red-font">返129积分</span><b>￥402.00</b></div>
-                                <div class="list-show-eva"><i class="icon-main icon-eva-6"></i><a href="">已有215人评价</a></div>
-                                <button type="button" class="btn btn-default btn-xs">加入购物车</button>
-                                <button type="button" class="btn btn-default btn-xs">收藏</button>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <img class="center-block" alt="" src="/h_assets/img/advertise/ad-2.jpg" /></a>
-                                <div class="summary"><a href="">adidas阿迪达斯2013夏季新款女子跑步鞋Q22344</a></div>
-                                <div class="price"><span class="pull-right red-font">返129积分</span><b>￥402.00</b></div>
-                                <div class="list-show-eva"><i class="icon-main icon-eva-6"></i><a href="">已有215人评价</a></div>
-                                <button type="button" class="btn btn-default btn-xs">加入购物车</button>
-                                <button type="button" class="btn btn-default btn-xs">收藏</button>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <img class="center-block" alt="" src="/h_assets/img/advertise/ad-2.jpg" /></a>
-                                <div class="summary"><a href="">adidas阿迪达斯2013夏季新款女子跑步鞋Q22344</a></div>
-                                <div class="price"><span class="pull-right red-font">返129积分</span><b>￥402.00</b></div>
-                                <div class="list-show-eva"><i class="icon-main icon-eva-6"></i><a href="">已有215人评价</a></div>
-                                <button type="button" class="btn btn-default btn-xs">加入购物车</button>
-                                <button type="button" class="btn btn-default btn-xs">收藏</button>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <img class="center-block" alt="" src="/h_assets/img/advertise/ad-2.jpg" /></a>
-                                <div class="summary"><a href="">adidas阿迪达斯2013夏季新款女子跑步鞋Q22344</a></div>
-                                <div class="price"><span class="pull-right red-font">返129积分</span><b>￥402.00</b></div>
-                                <div class="list-show-eva"><i class="icon-main icon-eva-6"></i><a href="">已有215人评价</a></div>
-                                <button type="button" class="btn btn-default btn-xs">加入购物车</button>
-                                <button type="button" class="btn btn-default btn-xs">收藏</button>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <img class="center-block" alt="" src="/h_assets/img/advertise/ad-2.jpg" /></a>
-                                <div class="summary"><a href="">adidas阿迪达斯2013夏季新款女子跑步鞋Q22344</a></div>
-                                <div class="price"><span class="pull-right red-font">返129积分</span><b>￥402.00</b></div>
-                                <div class="list-show-eva"><i class="icon-main icon-eva-6"></i><a href="">已有215人评价</a></div>
-                                <button type="button" class="btn btn-default btn-xs">加入购物车</button>
-                                <button type="button" class="btn btn-default btn-xs">收藏</button>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <img class="center-block" alt="" src="/h_assets/img/advertise/ad-2.jpg" /></a>
-                                <div class="summary"><a href="">adidas阿迪达斯2013夏季新款女子跑步鞋Q22344</a></div>
-                                <div class="price"><span class="pull-right red-font">返129积分</span><b>￥402.00</b></div>
-                                <div class="list-show-eva"><i class="icon-main icon-eva-6"></i><a href="">已有215人评价</a></div>
-                                <button type="button" class="btn btn-default btn-xs">加入购物车</button>
-                                <button type="button" class="btn btn-default btn-xs">收藏</button>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <img class="center-block" alt="" src="/h_assets/img/advertise/ad-2.jpg" /></a>
-                                <div class="summary"><a href="">adidas阿迪达斯2013夏季新款女子跑步鞋Q22344</a></div>
-                                <div class="price"><span class="pull-right red-font">返129积分</span><b>￥402.00</b></div>
-                                <div class="list-show-eva"><i class="icon-main icon-eva-6"></i><a href="">已有215人评价</a></div>
-                                <button type="button" class="btn btn-default btn-xs">加入购物车</button>
-                                <button type="button" class="btn btn-default btn-xs">收藏</button>
-                            </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>

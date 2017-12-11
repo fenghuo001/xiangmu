@@ -37,7 +37,7 @@ Route::resource('goods','GoodsController');
 
 Route::get('/index','HomeController@index');
 Route::get('/liebiao','HomeController@liebiao');
-Route::get('/xiangqing','HomeController@xiangqing');
+Route::get('/goods/{$id}','HomeController@xiangqing');
 Route::get('/login','HomeController@login');
 Route::post('/login','HomeController@dologin');
 

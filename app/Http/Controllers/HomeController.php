@@ -13,11 +13,14 @@ class HomeController extends Controller
         $jieri = DB::table('goods')->where('pid_fir',2)->get();
         $goods = DB::table('goods')->where('pid_fir',3)->get();
         // dd($goods);die;
-    	return view('home.index',['goods'=>$goods,'cuxiao'=>$cuxiao,'jieri'=>$jieri]);
+    	return view('home.index',compact('goods','cuxiao','jieri'));
     }
     public function liebiao()
     {
-    	return view('home.liebiao.liebiao');
+        $hot = DB::table('goods')->where(['pid_fir'=>1,'pid_sec'=>1])->get();
+        $good = DB::table('goods')->where(['pid_fir'=>1])->get();
+        // dd($good);
+    	return view('home.liebiao.liebiao',compact('hot','good'));
     }
     public function xiangqing()
     {

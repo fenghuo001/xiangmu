@@ -26,30 +26,7 @@
         <div class="row">
             <!-- 左边栏 -->
             <div id="sidebar" class="col-lg-2">
-                <div class="widget mb10">
-                    <h5 class="widget-tit pl10 fb">相关分类</h5>
-                    <ul class="widget-list-1">
-                        <li><a href="">CPU</a></li>
-                        <li><a href="">声卡/扩展卡</a></li>
-                        <li><a href="">刻录机/光驱</a></li>
-                        <li><a href="">主板</a></li>
-                        <li><a href="">刻录机/光驱</a></li>
-                        <li><a href="">声卡/扩展卡</a></li>
-                        <li><a href="">刻录机/光驱</a></li>
-                    </ul>
-                </div>
-                <div class="widget mb10">
-                    <h5 class="widget-tit pl10 fb">其他品牌</h5>
-                    <ul class="widget-list-1">
-                        <li><a href="">CPU</a></li>
-                        <li><a href="">声卡/扩展卡</a></li>
-                        <li><a href="">刻录机/光驱</a></li>
-                        <li><a href="">主板</a></li>
-                        <li><a href="">刻录机/光驱</a></li>
-                        <li><a href="">声卡/扩展卡</a></li>
-                        <li><a href="">刻录机/光驱</a></li>
-                    </ul>
-                </div>
+                
                 <div class="widget mb10">
                     <h5 class="widget-tit pl10 fb">销量排行榜</h5>
                     <ul class="widget-list-2">

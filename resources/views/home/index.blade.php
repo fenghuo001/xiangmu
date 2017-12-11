@@ -1,5 +1,14 @@
 @extends('layouts.home')
 
+
+@section('style')
+<style>
+    .open > .dropdown-menu {
+      display: block;
+    }
+</style>
+@show
+
 @section('section')
         <!-- 第一行 轮播广告 开始 -->
         <div class="row first lazy">
@@ -33,7 +42,7 @@
                     <div class="carousel-inner">
                         <div class="item active">
                             <ul class="topic-list">
-                                <li><a href="/xiangqing">
+                                <li><a href="/good/{id}">
                                     <img alt="" src="/h_assets/img/advertise/focus-ban-3.jpg" /></a></li>
                                 <li><a href="/xiangqing">
                                     <img alt="" src="/h_assets/img/advertise/focus-ban-3.jpg" /></a></li>
@@ -104,7 +113,7 @@
                     <div class="tab-pane active" id="special">
                         <ul class="listbar">
                             @foreach($cuxiao as $k=>$v)
-                            <li><a href="">
+                            <li><a href="/goods/{{$v->id}}">
                                 <img alt="" class="center-block" src="/h_assets/img/advertise/ad-1.jpg"></a>
                                 <div class="summary"><a href="">{{$v->title}}</a></div>
                                 <div class="price mt5">抢购价：<b>¥{{$v->spxj}}</b><i class="fr">送200优惠宝</i></div>

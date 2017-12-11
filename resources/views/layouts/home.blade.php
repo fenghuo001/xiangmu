@@ -11,6 +11,8 @@
     @section('css')
     @show
 </head>
+@section('style')
+@show
 <body>
     <div id="sitebar">
         <div class="container">

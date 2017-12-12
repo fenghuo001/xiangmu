@@ -25,9 +25,11 @@ Route::group(['middleware'=>'login'], function(){
 	Route::resource('/user','UserController');
 	//分类管理
 	Route::resource('/cate','CateController');
+    //留言管理
+    Route::resource('/message','MessageController');
+    //广告管理
+    Route::resource('/adv','AdvController');
 
-
-	Route::resource('guanggao','GuanggaoController');
 });
 // --------------------------------------------
 

@@ -4,7 +4,7 @@
         <ul class="nav" id="main-menu">
           
             <li>
-                <a class="active-menu" href="index.html"><i class="fa fa-dashboard "></i>Dashboard</a>
+                <a class="active-menu" href="/admin"><i class="fa fa-dashboard "></i>Dashboard</a>
             </li>
             <li>
                 <a href="#"><i class="fa fa-desktop "></i>用户管理<span class="fa arrow"></span></a>
@@ -54,7 +54,7 @@
                 <a href="#"><i class="fa fa-desktop "></i>留言管理<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="/message"><i class="fa fa-bell "></i>留言管理</a>
+                        <a href="/messaget"><i class="fa fa-bell "></i>留言管理</a>
                     </li>
                 </ul>
             </li>

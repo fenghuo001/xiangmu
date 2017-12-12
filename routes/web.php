@@ -27,7 +27,7 @@ Route::group(['middleware'=>'login'], function(){
 	Route::resource('/cate','CateController');
 
     //留言管理
-    Route::resource('/message','MessageController');
+    Route::resource('/messaget','MessagetController');
     //广告管理
     Route::resource('/adv','AdvController');
 

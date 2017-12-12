@@ -9,7 +9,7 @@
 @endsection
 
 @section('fl')
-@show
+@endsection
 
 @section('section')
 
@@ -162,12 +162,14 @@
                             </div>
                             <div style="border-bottom: 1px dotted #ccc;"></div>
                             <div class="meta-btn">
-                                <div class="quantity mb10">购买数量：<span class="ui-spinner"><input type="text" value="1" aria-valuenow="0" autocomplete="off"><a class="ui-spinner-button ui-spinner-up" tabindex="-1"><span class="ui-icon">▲</span></a><a class="ui-spinner-button ui-spinner-down" tabindex="-1"><span class="ui-icon">▼</span></a></span>(库存{{$goods->spkc}}件)</div>
+                                <form action="/cart" method="post">
+                                <div class="quantity mb10">购买数量：<span class="ui-spinner"><input type="text" value="1" name="num" aria-valuenow="0" autocomplete="off"><a class="ui-spinner-button ui-spinner-up" tabindex="-1"><span class="ui-icon">▲</span></a><a class="ui-spinner-button ui-spinner-down" tabindex="-1"><span class="ui-icon">▼</span></a></span>(库存{{$goods->spkc}}件)</div>
+                                <input type="hidden" name="goodsid" value="{{$goods->id}}">
                                 <div class="button-group">
-                                    <button type="button" class="btn btn-danger btn-lg mr20">立即购买</button>
-                                    <button type="button" class="btn btn-addcart btn-lg mr20"><i class="icon-main icon-addcart"></i>加入购物车</button>
-                                    <button type="button" class="btn btn-collect btn-lg"><i class="icon-main icon-like"></i>收藏</button>
+                                    <button type="submit" class="btn btn-addcart btn-lg mr20"><i class="icon-main icon-addcart"></i>加入购物车</button>
                                 </div>
+                                {{csrf_field()}}
+                                </form>
                             </div>
                         </div>
                         <div class="clearfix"></div>

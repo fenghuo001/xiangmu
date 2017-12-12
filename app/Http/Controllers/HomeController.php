@@ -68,5 +68,4 @@ class HomeController extends Controller
             return back()->with('msg','注册失败');
         }
     }
-
 }

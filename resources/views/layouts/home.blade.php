@@ -81,7 +81,7 @@
                         </ul>
                     </div>
                     <div id="mini_cart" class="btn-group mt30 ml15">
-                        <a href="/cart/" class="btn btn-radius-none btn-default dropdown-toggle f12" data-toggle="dropdown">
+                        <a href="/cart" class="btn btn-radius-none btn-default dropdown-toggle f12" data-toggle="dropdown">
                             <i class="icon-main icon-cart ilb"></i>去购物车结算 <span class="caret"></span>
                         </a>
                         <!--购物车为空-->
@@ -128,7 +128,7 @@
                                 </div>
                                 <div class="box-settlement tr">
                                     共 <b class="red-font">3</b> 件商品&nbsp;&nbsp;共计<b class="red-font f16">￥ 2008.00</b>
-                                    <a href="/cart/" class="btn btn-danger">去购物车结算</a>
+                                    <a href="/cart" class="btn btn-danger">去购物车结算</a>
                                 </div>
                             </li>
                         </ul>

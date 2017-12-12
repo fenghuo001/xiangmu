@@ -556,7 +556,7 @@ input, button, select, textarea { outline: none; }
 .cart-icon-1 { background-position: 0 0; width: 364px; height: 100px; }
 .cart-icon-2 { background-position: 0 -100px; width: 364px; height: 100px; }
 .cart-icon-3 { background-position: 0 -200px; width: 364px; height: 100px; }
-.cart-title { height: 34px; background: #ce000d; line-height: 34px; color: #fff; }
+.cart-title { height: 34px; background: #ce000d; line-height: 34px; color: #fff;margin-bottom: 15px; }
 .cart-content { border: 1px solid #ddd; }
 .tr-title { background: #f7f7f7; height: 33px; border-bottom: 1px solid #e0e0e0; margin: 0; padding-left: 10px; }
 .tr-list { background: #fffdee; padding: 10px; border-bottom: 1px solid #eee; }

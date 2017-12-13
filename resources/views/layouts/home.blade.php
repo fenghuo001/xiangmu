@@ -27,7 +27,7 @@
                 </div>
                 <div class="col-lg-6">
                     <ul class="pull-right bar-link">
-                        <li><a href="/member/order.html">我的订单</a> | </li>
+                        <li><a href="/address">个人中心</a> | </li>
                         <li><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=27102514&amp;site=qq&amp;menu=yes">客服服务</a> | </li>
                         <li><a href="sitemap.html">网站导航</a> |&nbsp;&nbsp;&nbsp;&nbsp;</li>
                         <li class="tel-num"><i class="icon-main icon-tel mt8 mr5"></i>8888-888-888</li>

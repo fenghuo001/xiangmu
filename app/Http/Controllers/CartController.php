@@ -16,9 +16,10 @@ class CartController extends Controller
         if($res){
         	return view('home.cart.hui');
         }else{
-        	return back()->whit('msg','添加失败');
+        	return back()->with('msg','添加失败');
         }
     }
+    //订单表
     public function cart()
     {
     	$id = session('id');
@@ -40,22 +41,6 @@ class CartController extends Controller
     		echo 0;
     	}
     }
-    public function confirm()
-    {
-    	return view('home.cart.confirm');
-    }
 
-    public function getarea(Request $request)
-    {
-        $pid = $request->pid;
-        $province = DB::table('areas')->where('area_parent_id',$pid)->get();
-        return $province->toJson();
-    }
-    public function postconfirm(Request $request)
-    {
-        $data = $request->except(['_token']);
-        $data['userid'] = session('id');
-        $address = DB::table('address')->insert($data);
-        
-    }
+    
 }

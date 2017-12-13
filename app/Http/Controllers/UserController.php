@@ -129,4 +129,10 @@ class UserController extends Controller
             return back()->with('msg','删除失败');
         }
     }
+
+
+    public function center()
+    {
+        return view('home.user.center');
+    }
 }

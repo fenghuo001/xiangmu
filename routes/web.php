@@ -31,15 +31,24 @@ Route::group(['middleware'=>'login'], function(){
     //广告管理
     Route::resource('/adv','AdvController');
 
-
-
+    //购物车
 	Route::post('/cart','CartController@store');
 	Route::get('/cart','CartController@cart');
 	Route::get('/cart/delete','CartController@delete');
-	Route::get('/confirm','CartController@confirm');
+	//
+	Route::get('/center','UserController@center');
+	//地址
+	Route::resource('address','AddressController');
+	Route::post('addresses','AddressController@addresses');
+	Route::get('/getarea','AddressController@getarea');
+	//订单
+	Route::resource('dingdan','DingdanController');
+	Route::post('/dingdan/info','DingdanController@info');
+
+
+
 	Route::post('/confirm','CartController@postconfirm');
 
-	Route::get('/getarea','CartController@getarea');
 
 
 });

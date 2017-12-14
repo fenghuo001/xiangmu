@@ -8,6 +8,7 @@
     @show
     <link href="/h_assets/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
     <link href="/h_assets/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/h_assets/css/shutter.css">
     @section('css')
     @show
 </head>
@@ -758,6 +759,21 @@
     </footer>
     <script src="/h_assets/lib/jquery/jquery-1.11.0.js"></script>
     <script src="/h_assets/lib/bootstrap/js/bootstrap.js"></script>
+    <script src="/h_assets/js/jquery.min.js"></script>
+    <script src="/h_assets/js/velocity.js"></script>
+    <script src="/h_assets/js/shutter.js"></script>
+    <script>
+    $(function () {
+      $('.shutter').shutter({
+        shutterW: 780, // 容器宽度
+        shutterH: 358, // 容器高度
+        isAutoPlay: true, // 是否自动播放
+        playInterval: 10, // 自动播放时间
+        curDisplay: 3, // 当前显示页
+        fullPage: false // 是否全屏展示
+      });
+    });
+    </script>
     @section('js')
     @show
 </body>

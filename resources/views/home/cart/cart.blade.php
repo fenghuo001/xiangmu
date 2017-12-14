@@ -18,6 +18,7 @@
 
 <!-- 购物车开始 -->
 <div class="row">
+<form action="/dingdan/info" method="post">
     <div class="col-lg-12">
         <div class="cart-title f16 tit-family pl10 mt10">我的购物车</div>
         <div class="cart-content">
@@ -41,12 +42,10 @@
                     @foreach($goods as $k=>$v)
                     <tr>
                         <td width="5%" class="tr-list">
-                            <form>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" /></label>
-                                </div>
-                            </form>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="data[{{$v->id}}][id]" value="{{$v->goodsid}}" /></label>
+                            </div>
                         </td>
                         <td width="52%" class="tr-list">
                             <a href=""><img class="pull-left" alt="" src="{{$v->pic}}" /></a>
@@ -56,7 +55,7 @@
                         <td width="11%" class="tr-list">减￥0.00</td>
                         <td width="12%" class="tr-list">
                             <span class="ui-spinner">
-                                <input type="text" value="{{$v->num}}" aria-valuenow="0" autocomplete="off">
+                                <input type="text" name="data[{{$v->id}}][num]" value="{{$v->num}}" aria-valuenow="0" autocomplete="off">
                                 <a class="ui-spinner-button ui-spinner-up" tabindex="-1"><span class="ui-icon">▲</span></a>
                                 <a class="ui-spinner-button ui-spinner-down" tabindex="-1"><span class="ui-icon">▼</span></a>
                             </span>
@@ -73,18 +72,16 @@
             <div class="show-left pull-left">
                 <a href=""><i class="icon-main icon-fork"></i>删除选中的商品</a>
             </div>
-            <div class="show-right pull-right tr">
-                <div class=""><b class="orange-font">2</b> 件商品 总计：￥1398.00</div>
-                <div class="">返现：-￥0.00</div>
-            </div>
             <div class="clearfix"></div>
         </div>
         <div class="total tr"><b>总计（不含运费）：</b> <i class="orange-font f20 tit-family pr10">￥1398.00</i></div>
     </div>
+    {{csrf_field()}}
     <div class="pull-right">
         <a href="/index" class="btn btn-addcart btn-lg mr20">继续购物</a>
-        <a href="/confirm" type="button" class="btn btn-danger btn-lg mr20">去结算</a>
+        <button type="submit" class="btn btn-danger btn-lg mr20">创建订单</button>
     </div>
+</form>
 </div>
 <!-- 购物车结束 -->
 <!-- 购物车为空开始 -->

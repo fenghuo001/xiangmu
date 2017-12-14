@@ -14,29 +14,17 @@
         <div class="row first lazy">
             <div class="col-lg-2"></div>
             <div class="col-lg-8">
-                <div id="focus_carousel" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#focus_carousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#focus_carousel" data-slide-to="1" class=""></li>
-                        <li data-target="#focus_carousel" data-slide-to="2" class=""></li>
-                        <li data-target="#focus_carousel" data-slide-to="3" class=""></li>
-                    </ol>
-                    <div class="carousel-inner">
-                        <div class="item active">
-                            <img src="/h_assets/img/advertise/focus-ban-3.jpg" />
-                        </div>
-                        <div class="item">
-                            <img src="/h_assets/img/advertise/focus-ban-5.jpg" />
-                        </div>
-                        <div class="item">
-                            <img src="/h_assets/img/advertise/focus-ban-6.jpg" />
-                        </div>
-                        <div class="item">
-                            <img src="/h_assets/img/advertise/focus-ban-3.jpg" />
-                        </div>
-                    </div>
-                    <a class="left carousel-control" href="#focus_carousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-                    <a class="right carousel-control" href="#focus_carousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                <div class="shutter">
+                <div class="shutter-img">
+                  <a href="#" data-shutter-title="Iron Man"><img src="/h_assets/img/advertise/focus-ban-3.jpg" alt="#"></a>
+                  <a href="#" data-shutter-title="Super Man"><img src="/h_assets/img/advertise/focus-ban-6.jpg" alt="#"></a>
+                  <a href="#" data-shutter-title="The Hulk"><img src="/h_assets/img/advertise/focus-ban-5.jpg" alt="#"></a>
+                   
+                </div>
+                <ul class="shutter-btn">
+                  <li class="prev"></li>
+                  <li class="next"></li>
+                </ul>
                 </div>
                 <div id="topic_scroll" class="topic-scroll slide">
                     <div class="carousel-inner">
@@ -201,6 +189,7 @@
                 <div class="floor-show">
                     <img src="/h_assets/img/advertise/floor-1.jpg">
                 </div>
+
             </div>
             <div class="col-lg-10">
                 <div class="floor-title floor-bb-1 tr f12"><a href="">未过期的活动名称</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="">春节活动</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="">免运费活动</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="">更多&gt;&gt;</a></div>

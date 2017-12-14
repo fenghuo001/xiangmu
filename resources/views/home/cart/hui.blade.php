@@ -13,7 +13,7 @@
 
 @section('section')
 <div class="alert alert-info">
-    成功加入购物车!! <a href="/cart" class="alert-link">去结算</a>.
+    成功加入购物车!! <a href="/cart" class="alert-link">去结算</a>,<a href="/index" class="alert-link">继续购物</a>.
 </div>
 @endsection
 

@@ -8,6 +8,7 @@
     @show
     <link href="/h_assets/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
     <link href="/h_assets/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/h_assets/css/shutter.css">
     @section('css')
     @show
 </head>
@@ -27,7 +28,7 @@
                 </div>
                 <div class="col-lg-6">
                     <ul class="pull-right bar-link">
-                        <li><a href="/member/order.html">我的订单</a> | </li>
+                        <li><a href="/address">个人中心</a> | </li>
                         <li><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=27102514&amp;site=qq&amp;menu=yes">客服服务</a> | </li>
                         <li><a href="sitemap.html">网站导航</a> |&nbsp;&nbsp;&nbsp;&nbsp;</li>
                         <li class="tel-num"><i class="icon-main icon-tel mt8 mr5"></i>8888-888-888</li>
@@ -758,6 +759,21 @@
     </footer>
     <script src="/h_assets/lib/jquery/jquery-1.11.0.js"></script>
     <script src="/h_assets/lib/bootstrap/js/bootstrap.js"></script>
+    <script src="/h_assets/js/jquery.min.js"></script>
+    <script src="/h_assets/js/velocity.js"></script>
+    <script src="/h_assets/js/shutter.js"></script>
+    <script>
+    $(function () {
+      $('.shutter').shutter({
+        shutterW: 780, // 容器宽度
+        shutterH: 358, // 容器高度
+        isAutoPlay: true, // 是否自动播放
+        playInterval: 10, // 自动播放时间
+        curDisplay: 3, // 当前显示页
+        fullPage: false // 是否全屏展示
+      });
+    });
+    </script>
     @section('js')
     @show
 </body>

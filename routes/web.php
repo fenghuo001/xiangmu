@@ -29,17 +29,37 @@ Route::group(['middleware'=>'login'], function(){
     Route::resource('/messaget','MessagetController');
     //广告管理
     Route::resource('/adv','AdvController');
+<<<<<<< HEAD
     //商品管理
     Route::resource('goods','GoodsController');
     //订单管理
     Route::resource('dingdan','DingdanController');
     
+=======
+
+    //购物车
+>>>>>>> c87e4e7c77bf3a827da6337e9477b6806ee4cf03
 	Route::post('/cart','CartController@store');
 	Route::get('/cart','CartController@cart');
 	Route::get('/cart/delete','CartController@delete');
-	Route::get('/confirm','CartController@confirm');
+	//
+	Route::get('/center','UserController@center');
+	//地址
+	Route::resource('address','AddressController');
+	Route::post('addresses','AddressController@addresses');
+	Route::get('/getarea','AddressController@getarea');
+	//订单
+	Route::resource('dingdan','DingdanController');
+	Route::post('/dingdan/info','DingdanController@info');
+
+
+
 	Route::post('/confirm','CartController@postconfirm');
+<<<<<<< HEAD
 	Route::get('/getarea','CartController@getarea');
+=======
+
+>>>>>>> c87e4e7c77bf3a827da6337e9477b6806ee4cf03
 
 
 });

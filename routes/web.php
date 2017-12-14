@@ -25,20 +25,20 @@ Route::group(['middleware'=>'login'], function(){
 	Route::resource('/user','UserController');
 	//分类管理
 	Route::resource('/cate','CateController');
-
     //留言管理
     Route::resource('/messaget','MessagetController');
     //广告管理
     Route::resource('/adv','AdvController');
-
-
-
+    //商品管理
+    Route::resource('goods','GoodsController');
+    //订单管理
+    Route::resource('dingdan','DingdanController');
+    
 	Route::post('/cart','CartController@store');
 	Route::get('/cart','CartController@cart');
 	Route::get('/cart/delete','CartController@delete');
 	Route::get('/confirm','CartController@confirm');
 	Route::post('/confirm','CartController@postconfirm');
-
 	Route::get('/getarea','CartController@getarea');
 
 
@@ -46,7 +46,7 @@ Route::group(['middleware'=>'login'], function(){
 // --------------------------------------------
 
 // 商品管理
-Route::resource('goods','GoodsController');
+
 
 
 Route::get('/index','HomeController@index');

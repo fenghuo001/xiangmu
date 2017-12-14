@@ -27,15 +27,15 @@
     <table class="table table-striped table-bordered table-hover">			
         <thead>
             <tr>
-                 <th><input type="checkbox" class="text-center" id="dianji"></th>
-              0  <th>用户名称</th>
+                <th><input type="checkbox" class="text-center" id="dianji"></th>
+                <th>用户名称</th>
                 <th>留言内容</th>
                 <th>留言时间</th>
                 <th>操作</th>
             </tr>
         </thead>
         <tbody>  
-        @foreach($message as $k=>$v)
+        @foreach($messaget as $k=>$v)
             <tr>
                <th><input type="checkbox" class="text-center sjs"></th>
                	<td>{{$v->id}}</td>

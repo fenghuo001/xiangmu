@@ -22,6 +22,8 @@ class LoginController extends Controller
     	if(Hash::check($data['password'],$user->password)){
     	session(['id'=>$user->id]);
     	session(['username'=>$user->username]);
+        session(['tupian'=>$user->tupian]);
+        
     	return redirect('/admin')->with('msg','登录成功');
        }
         return back()->with('msg','登录失败');

@@ -53,9 +53,7 @@
             <li>
                 <a href="#"><i class="fa fa-desktop "></i>订单管理<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
-                    <li>
-                        <a href="/dingdan/create"><i class="fa fa-toggle-on"></i>添加订单</a>
-                    </li>
+                 
                     <li>
                         <a href="/dingdan"><i class="fa fa-bell "></i>订单管理</a>
                     </li>

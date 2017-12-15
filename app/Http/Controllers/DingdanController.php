@@ -3,11 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-<<<<<<< HEAD
-=======
 use DB;
->>>>>>> c87e4e7c77bf3a827da6337e9477b6806ee4cf03
-
 class DingdanController extends Controller
 {
     /**
@@ -17,7 +13,7 @@ class DingdanController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.dingdan.index');
     }
 
     /**
@@ -27,11 +23,11 @@ class DingdanController extends Controller
      */
     public function create()
     {
-<<<<<<< HEAD
-        return view('admin.dingdan.create');
-=======
-        //
->>>>>>> c87e4e7c77bf3a827da6337e9477b6806ee4cf03
+
+       
+
+        
+
     }
 
     /**
@@ -42,10 +38,7 @@ class DingdanController extends Controller
      */
     public function store(Request $request)
     {
-        //
-<<<<<<< HEAD
-=======
-
+        
     }
     public function info(Request $request)
     {
@@ -74,10 +67,10 @@ class DingdanController extends Controller
                 $total += $goods->num * $goods->spxj;
             }
         }
-        // dd($goodsData);
+        
         return view('home.dingdan.info',compact('address','goodsData','total'));
 
->>>>>>> c87e4e7c77bf3a827da6337e9477b6806ee4cf03
+
     }
 
     /**
@@ -124,8 +117,8 @@ class DingdanController extends Controller
     {
         //
     }
-<<<<<<< HEAD
-=======
+
+
     public function getarea(Request $request)
     {
         $pid = $request->pid;
@@ -141,5 +134,5 @@ class DingdanController extends Controller
         
         //
     }
->>>>>>> c87e4e7c77bf3a827da6337e9477b6806ee4cf03
+
 }

@@ -82,7 +82,7 @@
                         </ul>
                     </div>
                     <div id="mini_cart" class="btn-group mt30 ml15">
-                        <a href="/cart" class="btn btn-radius-none btn-default dropdown-toggle f12" data-toggle="dropdown">
+                        <a href="cart/cart" class="btn btn-radius-none btn-default dropdown-toggle f12" data-toggle="dropdown">
                             <i class="icon-main icon-cart ilb"></i>去购物车结算 <span class="caret"></span>
                         </a>
                         <!--购物车为空-->
@@ -768,7 +768,7 @@
         shutterW: 780, // 容器宽度
         shutterH: 358, // 容器高度
         isAutoPlay: true, // 是否自动播放
-        playInterval: 10, // 自动播放时间
+        playInterval: 1000, // 自动播放时间
         curDisplay: 3, // 当前显示页
         fullPage: false // 是否全屏展示
       });

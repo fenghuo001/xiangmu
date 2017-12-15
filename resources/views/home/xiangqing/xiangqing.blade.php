@@ -4,6 +4,12 @@
 <link rel="stylesheet" href="/h_assets/css/smoothproducts.css">
 @endsection
 
+@section('daohang')
+    @foreach($navs as $k=>$v)
+    <li><a href="{{$v->links}}">{{$v->title}}</a></li>
+    @endforeach
+@endsection
+
 @section('title')
 <title>详情页</title>
 @endsection

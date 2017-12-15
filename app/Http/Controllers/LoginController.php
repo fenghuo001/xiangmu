@@ -9,7 +9,8 @@ class LoginController extends Controller
 {
     public function login()
     {
-    	return view('admin.login');
+        $navs=[];
+    	return view('admin.login',compact('navs'));
     }
     public function tologin(Request $request)
     {

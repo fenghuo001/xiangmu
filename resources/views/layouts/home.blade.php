@@ -54,34 +54,7 @@
                     </form>
                 </div>
                 <div class="col-lg-3">
-                    <div id="my_account" class="btn-group mt30 ml50 ">
-                        <button type="button" class="btn btn-radius-none btn-default dropdown-toggle f12" data-toggle="dropdown">我的账户 <span class="caret"></span></button>
-                        <!--登录之前-->
-                        <!-- <ul class="dropdown-menu p10 f12" role="menu">
-                            <li><a href="/account/login.html" class="btn btn-warning btn-block">立即登录</a>新客户？<a class="blue-font" href="/account/register.html">免费注册</a></li>
-                            <li class="divider"></li>
-                            <li><a href="/member/">我的账户</a></li>
-							<li><a href="/member/order.html">我的订单</a></li>
-                            <li><a href="#">评论已购商品</a></li>
-							<li><a href="#">为我推荐</a></li>
-                        </ul> -->
-                        <!--登录之后-->
-                        <ul class="dropdown-menu p10 f12" style="width: 240px;" role="menu">
-                            <li>
-                                <div class="box-title fb"><span class="pull-right"><a href="/member/" class="blue-font">去我的传智首页</a></span>用户名称</div>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <div class="box-title">最新订单状态：<span><a href="/member/order.html">查看所有订单</a></span></div>
-                            </li>
-                            <li class="divider"></li>
-                            <li><a href="/member/order.html?status=0">待处理订单<i class="gray-font">(0)</i></a></li>
-                            <li><a href="/member/order.html?status=1">待处理订单<i class="gray-font">(1)</i></a></li>
-                            <li><a href="/member/order.html?status=2">待处理订单<i class="gray-font">(2)</i></a></li>
-                            <li><a href="/member/order.html?status=3">待处理订单<i class="gray-font">(3)</i></a></li>
-                        </ul>
-                    </div>
-                    <div id="mini_cart" class="btn-group mt30 ml15">
+                    <div id="mini_cart" class="btn-group mt30 ml15 pull-right">
                         <a href="/cart" class="btn btn-radius-none btn-default dropdown-toggle f12" data-toggle="dropdown">
                             <i class="icon-main icon-cart ilb"></i>去购物车结算 <span class="caret"></span>
                         </a>
@@ -601,9 +574,9 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav f14">
-                        <li class="active"><a href="/index">首页</a></li>
-                        <li><a href="/liebiao">专题</a></li>
-                        <li><a href="#">优惠券</a></li>
+                        @section('daohang')
+                        
+                        @show
                         <!--<li class="dropdown"> <a href="#">Dropdown </a> </li>-->
                     </ul>
                     <!--<ul class="nav navbar-nav navbar-right">

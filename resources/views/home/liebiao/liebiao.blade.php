@@ -4,6 +4,12 @@
 <title>列表页</title>
 @stop
 
+@section('daohang')
+    @foreach($navs as $k=>$v)
+    <li><a href="{{$v->links}}">{{$v->title}}</a></li>
+    @endforeach
+@endsection
+
 @section('section')
 
         <!-- 列表页部分开始 -->
@@ -92,115 +98,6 @@
                         </ul>
                     </div>
                 </div>
-                <div class="item-filter mt10">
-                    <div class="list-item-title pl10 f14 tit-family "><b class="red-font f16">休闲鞋</b>---商品筛选</div>
-                    <div class="filter-list">
-                        <div class="list-body">
-                            <div class="pull-left filter-left">种类：</div>
-                            <div class="pull-right filter-right">
-                                <div class="alert-sm fade in pull-left">
-                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                                    品牌：<b class="red-font">花花公子</b>
-                                </div>
-                                <div class="alert-sm fade in pull-left">
-                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                                    品牌：<b class="red-font">花花公子</b>
-                                </div>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="list-body">
-                            <div class="pull-left filter-left">种类：</div>
-                            <div class="pull-right filter-right">
-                                <ul>
-                                    <li><a href="">日常休闲</a></li>
-                                    <li><a href="">棉鞋</a></li>
-                                    <li><a href="">工装鞋</a></li>
-                                    <li><a href="">板鞋</a></li>
-                                    <li><a href="">帆布鞋</a></li>
-                                    <li><a href="">增高鞋</a></li>
-                                    <li><a href="">驾车鞋</a></li>
-                                    <li><a href="">安全鞋</a></li>
-                                    <li><a href="">功能鞋</a></li>
-                                    <li><a href="">其他</a></li>
-                                </ul>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="list-body">
-                            <div class="pull-left filter-left">价格：</div>
-                            <div class="pull-right filter-right">
-                                <ul>
-                                    <li><a href="">日常休闲</a></li>
-                                    <li><a href="">棉鞋</a></li>
-                                    <li><a href="">工装鞋</a></li>
-                                    <li><a href="">板鞋</a></li>
-                                    <li><a href="">帆布鞋</a></li>
-                                    <li><a href="">增高鞋</a></li>
-                                    <li><a href="">驾车鞋</a></li>
-                                    <li><a href="">安全鞋</a></li>
-                                    <li><a href="">功能鞋</a></li>
-                                    <li><a href="">其他</a></li>
-                                </ul>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="list-body">
-                            <div class="pull-left filter-left">鞋面材质：</div>
-                            <div class="pull-right filter-right">
-                                <ul>
-                                    <li><a href="">日常休闲</a></li>
-                                    <li><a href="">棉鞋</a></li>
-                                    <li><a href="">工装鞋</a></li>
-                                    <li><a href="">板鞋</a></li>
-                                    <li><a href="">帆布鞋</a></li>
-                                    <li><a href="">增高鞋</a></li>
-                                    <li><a href="">驾车鞋</a></li>
-                                    <li><a href="">安全鞋</a></li>
-                                    <li><a href="">功能鞋</a></li>
-                                    <li><a href="">其他</a></li>
-                                </ul>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="list-body">
-                            <div class="pull-left filter-left">尺码：</div>
-                            <div class="pull-right filter-right">
-                                <ul>
-                                    <li><a href="">日常休闲</a></li>
-                                    <li><a href="">棉鞋</a></li>
-                                    <li><a href="">工装鞋</a></li>
-                                    <li><a href="">板鞋</a></li>
-                                    <li><a href="">帆布鞋</a></li>
-                                    <li><a href="">增高鞋</a></li>
-                                    <li><a href="">驾车鞋</a></li>
-                                    <li><a href="">安全鞋</a></li>
-                                    <li><a href="">功能鞋</a></li>
-                                    <li><a href="">其他</a></li>
-                                </ul>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="list-body">
-                            <div class="pull-left filter-left">类型：</div>
-                            <div class="pull-right filter-right">
-                                <ul>
-                                    <li><a href="">日常休闲</a></li>
-                                    <li><a href="">棉鞋</a></li>
-                                    <li><a href="">工装鞋</a></li>
-                                    <li><a href="">板鞋</a></li>
-                                    <li><a href="">帆布鞋</a></li>
-                                    <li><a href="">增高鞋</a></li>
-                                    <li><a href="">驾车鞋</a></li>
-                                    <li><a href="">安全鞋</a></li>
-                                    <li><a href="">功能鞋</a></li>
-                                    <li><a href="">其他</a></li>
-                                </ul>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-                </div>
                 <div class="item-pro-list mt10">
                     <div class="list-item-title">
                         <div class="sort-left pull-left pl10">
@@ -223,29 +120,21 @@
                             <li>
                                 <a href="/goods/{{$v->id}}">
                                     <img class="center-block" alt="" src="/h_assets/img/advertise/ad-2.jpg" /></a>
+                                <input type="hidden" name="goodsid" value="{{$v->id}}">
                                 <div class="summary"><a href="">{{$v->title}}</a></div>
                                 <div class="price"><span class="pull-right red-font">返129积分</span><b>￥{{$v->spxj}}</b></div>
                                 <div class="list-show-eva"><i class="icon-main icon-eva-6"></i><a href="">已有215人评价</a></div>
-                                <button type="button" class="btn btn-default btn-xs">加入购物车</button>
+                                <button type="submit" class="btn btn-default btn-xs">加入购物车</button>
                                 <button type="button" class="btn btn-default btn-xs">收藏</button>
                             </li>
                             @endforeach
                         </ul>
                     </div>
                 </div>
-                <!-- <div class="list-pagination pull-right">
-                    <ul class="pagination">
-                        <li class="previous disabled"><a href="#">&laquo;&laquo;</a></li>
-                        <li class="disabled"><a href="#">&laquo;</a></li>
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#">&raquo;</a></li>
-                        <li class="next"><a href="#">&raquo;&raquo;</a></li>
-                    </ul>
-                </div> -->
+                {{csrf_field()}}
+                <div class="pull-right">
+                    {{ $good->links() }}
+                </div>
             </div>
             <!-- 内容区域结束 -->
         </div>
@@ -254,9 +143,5 @@
 @stop
 
 @section('js')
-<script type="text/javascript">
-    $('#vcode_img').click(function  () {
-        $(this).attr('src',  $(this).data('src')+'?'+ Math.random());
-    });
-</script>
+
 @endsection

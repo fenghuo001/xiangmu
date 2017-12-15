@@ -9,9 +9,7 @@
 @endsection
 
 @section('top')
-@endsection
 
-@section('fl')
 @endsection
 
 @section('section')
@@ -74,7 +72,6 @@
             </div>
             <div class="clearfix"></div>
         </div>
-        <div class="total tr"><b>总计（不含运费）：</b> <i class="orange-font f20 tit-family pr10">￥1398.00</i></div>
     </div>
     {{csrf_field()}}
     <div class="pull-right">
@@ -108,9 +105,6 @@
 
 @section('js')
 <script type="text/javascript">
-    $('#vcode_img').click(function  () {
-        $(this).attr('src',  $(this).data('src')+'?'+ Math.random());
-    });
     $('.del').click(function(){
         var cid = $(this).attr('cid');
         var tr = $(this).parents('tr');
@@ -121,7 +115,7 @@
             data:{'cid':cid},
             success:function(data){
                 if(data == 1){
-                    tr.fadeOut(1000);
+                    tr.fadeOut(300);
                 }
             }
         })

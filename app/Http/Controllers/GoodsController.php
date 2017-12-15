@@ -72,11 +72,12 @@ class GoodsController extends Controller
      */
     public function show($id)
     {
+        $navs = DB::table('navs')->where(['ztid'=>1])->get();
         $goods = DB::table('goods')->where('id',$id)->first();
         $goods_img = DB::table('goods_img')->where('spid',$id)->get();
 
-
-        return view('home.xiangqing.xiangqing',compact('goods','goods_img'));
+        // dd($navs);
+        return view('home.xiangqing.xiangqing',compact('navs','goods','goods_img'));
     }
 
     /**

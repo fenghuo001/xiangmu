@@ -43,15 +43,7 @@ class AddressController extends Controller
      */
     public function store(Request $request)
     {
-        //插入订单表
-        ////读取商品的信息
-        ///
-        /// 读取用户的地址信息
-        /// 
-        /// 
-        
-        
-
+        //
     }
     public function addresses(Request $request)
     {
@@ -120,5 +112,10 @@ class AddressController extends Controller
         $pid = $request->pid;
         $province = DB::table('areas')->where('area_parent_id',$pid)->get();
         return $province->toJson();
+    }
+    public function delete(Request $request)
+    {
+        $id = $request->input('cid');
+        echo $id;
     }
 }

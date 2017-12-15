@@ -9,23 +9,22 @@ class HomeController extends Controller
 {
     public function index()
     {
+        $navs = DB::table('navs')->where(['ztid'=>1])->get();
         $cuxiao = DB::table('goods')->where(['pid_fir'=>1,'pid_sec'=>1])->get();
         $jieri = DB::table('goods')->where('pid_fir',2)->get();
         $goods = DB::table('goods')->where('pid_fir',3)->get();
         // dd($goods);die;
-    	return view('home.index',compact('goods','cuxiao','jieri'));
+    	return view('home.index',compact('navs','goods','cuxiao','jieri'));
     }
     public function liebiao()
     {
+        $navs = DB::table('navs')->where(['ztid'=>1])->get();
         $hot = DB::table('goods')->where(['pid_fir'=>1,'pid_sec'=>1])->get();
-        $good = DB::table('goods')->where(['pid_fir'=>1])->get();
+        $good = DB::table('goods')->where(['pid_fir'=>1])->paginate(12);
         // dd($good);
-    	return view('home.liebiao.liebiao',compact('hot','good'));
+    	return view('home.liebiao.liebiao',compact('hot','good','navs'));
     }
-    public function xiangqing()
-    {
-    	return view('home.xiangqing.xiangqing');
-    }
+    //登录
     public function login()
     {
     	return view('home.login.login');

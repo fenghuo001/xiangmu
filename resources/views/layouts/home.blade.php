@@ -54,6 +54,7 @@
                     </form>
                 </div>
                 <div class="col-lg-3">
+<<<<<<< HEAD
                     <div id="my_account" class="btn-group mt30 ml50 ">
                         <button type="button" class="btn btn-radius-none btn-default dropdown-toggle f12" data-toggle="dropdown">我的账户 <span class="caret"></span></button>
                         <!--登录之前-->
@@ -83,6 +84,10 @@
                     </div>
                     <div id="mini_cart" class="btn-group mt30 ml15">
                         <a href="cart/cart" class="btn btn-radius-none btn-default dropdown-toggle f12" data-toggle="dropdown">
+=======
+                    <div id="mini_cart" class="btn-group mt30 ml15 pull-right">
+                        <a href="/cart" class="btn btn-radius-none btn-default dropdown-toggle f12" data-toggle="dropdown">
+>>>>>>> eef42c61c3f792f206d99c5c6bd5d660d46db6cd
                             <i class="icon-main icon-cart ilb"></i>去购物车结算 <span class="caret"></span>
                         </a>
                         <!--购物车为空-->
@@ -601,9 +606,9 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav f14">
-                        <li class="active"><a href="/index">首页</a></li>
-                        <li><a href="/liebiao">专题</a></li>
-                        <li><a href="#">优惠券</a></li>
+                        @section('daohang')
+                        
+                        @show
                         <!--<li class="dropdown"> <a href="#">Dropdown </a> </li>-->
                     </ul>
                     <!--<ul class="nav navbar-nav navbar-right">

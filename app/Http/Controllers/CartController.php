@@ -9,7 +9,7 @@ class CartController extends Controller
     //购物车
     public function store(Request $request)
     {
-        $data = $request->only('num','goodsid');
+        $data = $request->except(['_token']);
         $data['addtime'] = date('Y-m-d H:i:s');
         $data['userid'] = session('id');
         $res = DB::table('carts')->insert($data);
@@ -28,7 +28,6 @@ class CartController extends Controller
     		$value->detail = DB::table('goods')->where('id',$value->goodsid)->first();
     		$value->pic = DB::table('goods_img')->where('spid',$value->goodsid)->value('imgs');
     	}
-    	// dd($goods);
         return view('home.cart.cart',compact('goods'));
     }
     public function delete(Request $request)

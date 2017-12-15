@@ -5,7 +5,7 @@
 @endsection
 
 @section('title')
-<title>支付页面</title>
+<title>收货地址</title>
 @endsection
 
 @section('top')
@@ -32,9 +32,9 @@
         <table width="100%" border="0">
             <tr>
                 <td width="15%">{{$v->name}}</td>
-                <td width="30%">{{$v->phone}}</td>
-                <td width="50%">{{$v->pname}}{{$v->cname}}{{$v->xname}}{{$v->detail}}</td>
-                <td width="5%"><span class="btn btn-danger btn-sm">删除</span></td>
+                <td width="20%">{{$v->phone}}</td>
+                <td width="60%">{{$v->pname}}{{$v->cname}}{{$v->xname}}{{$v->detail}}</td>
+                <td width="5%"><span class="btn btn-danger btn-sm del" cid="{{$v->id}}">删除</span></td>
             </tr>
         </table>
     </div>
@@ -90,6 +90,7 @@
                 </div>
             </div>
             {{csrf_field()}}
+            
             <button type="submit" class="btn btn-danger btn-lg mr20 col-md-12">立即添加</button>
         </div>
     </div>
@@ -159,6 +160,19 @@ $('select[name=city]').change(function(){
     })
 });
 
+$('.del').click(function(){
+    var cid = $(this).attr('cid');
+    var tr = $(this).parents('tr');
+
+    $.ajax({
+        type:'get',
+        url:'/address/delete',
+        data:{'cid':cid},
+        success:function(data){
+            console.log(data);
+        }
+    })
+})
 $('.tables').hover(function(){
     $(this).addClass('active');
 },function(){
@@ -167,6 +181,7 @@ $('.tables').hover(function(){
     $('.tables').removeClass('cur');
     $(this).addClass('cur');
 })
+//     tr.fadeOut(300);
 </script>
 @endsection
 

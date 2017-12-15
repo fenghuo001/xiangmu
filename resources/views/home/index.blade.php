@@ -1,5 +1,9 @@
 @extends('layouts.home')
-
+@section('daohang')
+@foreach($navs as $k=>$v)
+<li><a href="{{$v->links}}">{{$v->title}}</a></li>
+@endforeach
+@endsection
 
 @section('style')
 <style>

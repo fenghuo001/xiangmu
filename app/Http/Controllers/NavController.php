@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-class OkjkjController extends Controller
+use DB;
+class NavController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,8 @@ class OkjkjController extends Controller
      */
     public function index()
     {
-        //
+        $navs = DB::table('navs')->get();
+        return view('admin.nav.index',compact('navs'));
     }
 
     /**
@@ -23,7 +24,7 @@ class OkjkjController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.nav.create');
     }
 
     /**
@@ -34,7 +35,14 @@ class OkjkjController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->except(['_token'] );
+        $data['addtime'] = date('Y-m-d H:i:s');
+        $res = DB::table('navs')->insert($data);
+        if($res){
+            return redirect('/nav')->with('msg','添加成功');
+        }else{
+            return back()->with('msg','添加失败');
+        }
     }
 
     /**
@@ -56,7 +64,8 @@ class OkjkjController extends Controller
      */
     public function edit($id)
     {
-        //
+        $navs = DB::table('navs')->where('id',$id)->first();
+        return view('admin.nav.edit',['navs'=>$navs]);
     }
 
     /**
@@ -68,7 +77,13 @@ class OkjkjController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->except(['_token','_method']);
+        $res = DB::table('navs')->where('id',$id)->update($data);
+        if($res){
+            return redirect('/nav')->with('msg','更新成功');
+          }else{
+            return back()->with('msg','更新失败');
+          }
     }
 
     /**
@@ -79,6 +94,11 @@ class OkjkjController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = DB::table('navs')->where('id',$id)->delete();
+        if($data){
+            return back()->with('msg','删除成功');
+        }else{
+            return back()->with('msg','删除失败');
+        }
     }
 }

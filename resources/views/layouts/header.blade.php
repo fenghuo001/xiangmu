@@ -29,6 +29,17 @@
                 </ul>
             </li>
             <li>
+                <a href="#"><i class="fa fa-desktop "></i>导航管理<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="/nav/create"><i class="fa fa-bell "></i>添加导航</a>
+                    </li>
+                    <li>
+                        <a href="/nav"><i class="fa fa-bell "></i>导航列表</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
                 <a href="#"><i class="fa fa-desktop "></i>分类管理<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>

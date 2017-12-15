@@ -153,7 +153,7 @@
                             <div class="meta-reveal mb10">
                                 <ul>
                                     <li class="reveal-tit">商品编号：</li>
-                                    <li class="reveal-sow">XJ-85309-532203</li>
+                                    <li class="reveal-sow">{{$goods->id}}</li>
                                     <li class="reveal-tit">市场价：</li>
                                     <li class="reveal-sow rev-text-1">￥{{$goods->spyj}}</li>
                                     <li class="reveal-tit">市场价：</li>

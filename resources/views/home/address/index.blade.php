@@ -32,8 +32,8 @@
         <table width="100%" border="0">
             <tr>
                 <td width="15%">{{$v->name}}</td>
-                <td width="30%">{{$v->phone}}</td>
-                <td width="50%">{{$v->pname}}{{$v->cname}}{{$v->xname}}{{$v->detail}}</td>
+                <td width="20%">{{$v->phone}}</td>
+                <td width="60%">{{$v->pname}}{{$v->cname}}{{$v->xname}}{{$v->detail}}</td>
                 <td width="5%"><span class="btn btn-danger btn-sm del" cid="{{$v->id}}">删除</span></td>
             </tr>
         </table>

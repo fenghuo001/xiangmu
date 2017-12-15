@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('admin.index');
+    return view('admin.login');
 });
 Route::get('/admin/login','LoginController@login');
 Route::post('/admin/login','LoginController@tologin');
@@ -38,7 +38,6 @@ Route::group(['middleware'=>'login'], function(){
 	Route::get('/cart/delete','CartController@delete');
 
 	//
-	Route::get('/center','UserController@center');
 	//地址
 	Route::resource('address','AddressController');
 	Route::post('addresses','AddressController@addresses');
@@ -49,6 +48,7 @@ Route::group(['middleware'=>'login'], function(){
 	Route::post('/dingdan/info','DingdanController@info');
 });
 // --------------------------------------------
+Route::get('/center','UserController@center');
 
 Route::get('/index','HomeController@index');
 Route::get('/liebiao','HomeController@liebiao');

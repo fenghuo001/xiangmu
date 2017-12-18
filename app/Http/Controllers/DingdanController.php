@@ -4,10 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
-<<<<<<< HEAD
-=======
 
->>>>>>> eef42c61c3f792f206d99c5c6bd5d660d46db6cd
 class DingdanController extends Controller
 {
     /**
@@ -27,15 +24,9 @@ class DingdanController extends Controller
      */
     public function create()
     {
-<<<<<<< HEAD
 
-       
-
-        
-
-=======
         return view('admin.dingdan.create');
->>>>>>> eef42c61c3f792f206d99c5c6bd5d660d46db6cd
+
     }
 
     /**
@@ -46,9 +37,7 @@ class DingdanController extends Controller
      */
     public function store(Request $request)
     {
-<<<<<<< HEAD
-        
-=======
+
         $data['addressid'] = $request->addressid;
         $data['userid'] = session('id');
         $data['bm'] = 'ddbm'.rand(1000000,9999999);
@@ -71,7 +60,7 @@ class DingdanController extends Controller
             return back()->whit('msg','创建订单失败');
         }
         // dd($request->all());
->>>>>>> eef42c61c3f792f206d99c5c6bd5d660d46db6cd
+
     }
 
     public function info(Request $request)
@@ -104,10 +93,9 @@ class DingdanController extends Controller
         
         return view('home.dingdan.info',compact('address','goodsData','total'));
 
-<<<<<<< HEAD
 
-=======
->>>>>>> eef42c61c3f792f206d99c5c6bd5d660d46db6cd
+
+
     }
 
     /**
@@ -154,18 +142,17 @@ class DingdanController extends Controller
     {
         //
     }
-<<<<<<< HEAD
 
 
-=======
->>>>>>> eef42c61c3f792f206d99c5c6bd5d660d46db6cd
+
+
     public function getarea(Request $request)
     {
         $pid = $request->pid;
         $province = DB::table('areas')->where('area_parent_id',$pid)->get();
         return $province->toJson();
     }
-<<<<<<< HEAD
+
     public function rding(Request $request)
     {
         //确认订单页面
@@ -176,6 +163,5 @@ class DingdanController extends Controller
         //
     }
 
-=======
->>>>>>> eef42c61c3f792f206d99c5c6bd5d660d46db6cd
+
 }

@@ -14,6 +14,7 @@ class NavController extends Controller
     public function index()
     {
         $navs = DB::table('navs')->get();
+        
         return view('admin.nav.index',compact('navs'));
     }
 

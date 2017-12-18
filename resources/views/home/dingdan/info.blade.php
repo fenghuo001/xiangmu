@@ -38,7 +38,7 @@
 <div class="row">
     <div class="col-lg-12">
         <div class="cart-title f16 tit-family pl10 mt10">商品清单</div>
-<<<<<<< HEAD
+
        
             <div class="cart-content">
                 <table width="100%" border="0">
@@ -68,7 +68,7 @@
 
             </div>
         
-=======
+
         <div class="cart-content">
             <table width="100%" border="0">
                 <tbody>
@@ -96,7 +96,7 @@
                 </tbody>
             </table>
         </div>
->>>>>>> eef42c61c3f792f206d99c5c6bd5d660d46db6cd
+
     </div>
     <div class="col-lg-12 main-show mb10">
         <div class="total tr"><b>总计（不含运费）：</b> <i class="orange-font f20 tit-family pr10">￥{{$total}}</i></div>

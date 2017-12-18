@@ -66,7 +66,7 @@
                 <ul class="nav nav-second-level">
                  
                     <li>
-                        <a href="/dingdan"><i class="fa fa-bell "></i>订单管理</a>
+                        <a href="/dingdans"><i class="fa fa-bell "></i>订单管理</a>
                     </li>
                 </ul>
             </li>

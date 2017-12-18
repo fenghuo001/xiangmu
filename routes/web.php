@@ -11,20 +11,13 @@
 |
 */
 
-<<<<<<< HEAD
-
-=======
 Route::get('/', function () {
     return view('admin.login');
 });
->>>>>>> eef42c61c3f792f206d99c5c6bd5d660d46db6cd
 Route::get('/admin/login','LoginController@login');
 Route::post('/admin/login','LoginController@tologin');
 
 Route::group(['middleware'=>'login'], function(){
-	Route::get('/', function () {
-    return view('admin.index');
-});
 	Route::get('/admin','AdminController@index');
 	//用户管理
 	Route::resource('/user','UserController');
@@ -34,23 +27,13 @@ Route::group(['middleware'=>'login'], function(){
     Route::resource('/messaget','MessagetController');
     //广告管理
     Route::resource('/adv','AdvController');
-<<<<<<< HEAD
-
-=======
->>>>>>> eef42c61c3f792f206d99c5c6bd5d660d46db6cd
     //商品管理
     Route::resource('goods','GoodsController');
     //导航管理
     Route::resource('nav','NavController');
-    
-<<<<<<< HEAD
-
-
+    //订单管理
+    Route::resource('dingdans','DingdansController');
     //购物车
-
-=======
-    //购物车
->>>>>>> eef42c61c3f792f206d99c5c6bd5d660d46db6cd
 	Route::post('/cart','CartController@store');
 	Route::get('/cart','CartController@cart');
 	Route::get('/cart/delete','CartController@delete');
@@ -62,25 +45,12 @@ Route::group(['middleware'=>'login'], function(){
 	Route::get('/getarea','AddressController@getarea');
 	Route::get('/address/delete','AddressController@delete');
 	//订单
-	
+	Route::resource('dingdan','DingdanController');
 	Route::post('/dingdan/info','DingdanController@info');
-<<<<<<< HEAD
 
-
-
-	Route::post('/confirm','CartController@postconfirm');
-
-	Route::get('/getarea','CartController@getarea');
-
-
-
-
-
-=======
->>>>>>> eef42c61c3f792f206d99c5c6bd5d660d46db6cd
+	Route::get('/center','UserController@center');
 });
 // --------------------------------------------
-Route::get('/center','UserController@center');
 
 Route::get('/index','HomeController@index');
 Route::get('/liebiao','HomeController@liebiao');

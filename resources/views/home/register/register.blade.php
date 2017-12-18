@@ -15,8 +15,14 @@
                 <img alt="" src="/h_assets/img/advertise/login-ban.gif" />
             </div>
             <div class="col-lg-4">
+                    @if(session('msg'))
+                    <div class="alert alert-info col-md-12" style="margin-top:10px;">
+                       {{session('msg')}}
+                    </div>
+                    @endif
                 <!-- 注册表单开始 -->
                 <form role="form" class="login-form f14" action="/register" method="post">
+                    
                     <div class="form-group">
                         <label for="username">邮箱</label>
                         <input type="text" class="form-control" name="email" id="email" placeholder="邮箱">
@@ -73,7 +79,7 @@
         });
 
         $(this).addClass('disabled');
-        var t = 5;
+        var t = 60;
         var inte = setInterval(function(){
             $('#send').html(t+'秒后重新发送');
             t--;

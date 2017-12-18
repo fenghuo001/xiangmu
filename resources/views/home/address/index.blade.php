@@ -8,8 +8,6 @@
 <title>收货地址</title>
 @endsection
 
-@section('top')
-@endsection
 
 @section('fl')
 @endsection
@@ -23,79 +21,143 @@
     .cur{background: rgba(255,155,0,0.3);border:1px solid #000;}
 </style>
 
-<!-- 购物车开始 -->
-<div style="width:100%;height:500px;">
-<div class="row col-md-8">
-    <div class="cart-title f16 tit-family pl10 mt10">个人信息</div>
-    @foreach($address as $k=>$v)
-    <div class="tables">
-        <table width="100%" border="0">
-            <tr>
-                <td width="15%">{{$v->name}}</td>
-                <td width="20%">{{$v->phone}}</td>
-                <td width="60%">{{$v->pname}}{{$v->cname}}{{$v->xname}}{{$v->detail}}</td>
-                <td width="5%"><span class="btn btn-danger btn-sm del" cid="{{$v->id}}">删除</span></td>
-            </tr>
-        </table>
-    </div>
-    @endforeach
-</div>
-
-
-<form action="/addresses" method="post">
-    <div class="row col-md-3 col-md-offset-1">
-        <div class="cart-title f16 tit-family pl10 mt10">添加新地址</div>
-        @if(session('msg'))
-        <div class="alert alert-warning alert-dismissable">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-            {{session('msg')}}
+        <div class="row">
+            <h3 class="member-tit f16 fb tit-family">我的传智</h3>
         </div>
-        @endif
-        <div class="col-md-12">
-            <div class="form-group">
-                <label for="name" class="control-label">姓名</label>
-                <div class="">
-                    <input type="text" class="form-control" id="name" name="name" placeholder="姓名">
+        <div class="row">
+            <!-- 左边栏 -->
+            <div id="sidebar" class="col-lg-2">
+                <div class="widget mb10">
+                    <div class="panel-group" id="accordion">
+                        <div class="panel">
+                            <div class="panel-title">
+                                <h5 class="fb pl10">
+                                    <i class="pull-right m10 icon-main icon-up"></i><a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#collapse-1">相关分类</a>
+                                </h5>
+                            </div>
+                            <div id="collapse-1" class="panel-collapse collapse in">
+                                <div class="meb-left-list">
+                                    <ul>
+                                        <li><a href="">我的订单</a></li>
+                                        <li><a href="/cart">我的购物车</a></li>
+                                        <li><a href="">我的评价</a></li>
+                                        <li><a href="">我的晒单</a></li>
+                                        <li><a href="">我的关注</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel">
+                            <div class="panel-title">
+                                <h5 class="fb pl10">
+                                    <i class="pull-right m10 icon-main icon-down"></i><a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#collapse-2">账户中心</a>
+                                </h5>
+                            </div>
+                            <div id="collapse-2" class="panel-collapse collapse in">
+                                <div class="meb-left-list">
+                                    <ul>
+                                        <li><a href="">编辑个人信息</a></li>
+                                        <li><a href="">修改密码</a></li>
+                                        <li><a href="/address">地址簿管理</a></li>
+                                        <li><a href="">我的积分</a></li>
+                                        <li><a href="">我的优惠宝</a></li>
+                                        <li><a href="">我的优惠券</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel">
+                            <div class="panel-title">
+                                <h5 class="fb pl10">
+                                    <i class="pull-right m10 icon-main icon-down"></i><a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#collapse-3">客户服务</a>
+                                </h5>
+                            </div>
+                            <div id="collapse-3" class="panel-collapse collapse in">
+                                <div class="meb-left-list">
+                                    <ul>
+                                        <li><a href="">退换货申请</a></li>
+                                        <li><a href="">投诉反馈</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="form-group">
-                <label for="mobile" class="control-label">联系电话</label>
-                <div class="">
-                    <input type="text" class="form-control" id="mobile" name="phone" placeholder="联系电话">
+
+            <div class="row col-md-10" style="margin-left:5px;">
+                <div class="cart-title f16 tit-family pl10 mt10">地址信息</div>
+                @foreach($address as $k=>$v)
+                <div class="tables">
+                    <table width="100%" border="0">
+                        <tr>
+                            <td width="15%">{{$v->name}}</td>
+                            <td width="20%">{{$v->phone}}</td>
+                            <td width="60%">{{$v->pname}}{{$v->cname}}{{$v->xname}}{{$v->detail}}</td>
+                            <form action="/address/{{$v->id}}" method="post">
+                            <td width="5%"><span class="btn btn-danger btn-sm del">删除</span></td>
+                            </form>
+                        </tr>
+                    </table>
                 </div>
+                @endforeach
             </div>
-            <div class="form-group">
-                <label for="address" class="control-label">地址</label>
-                <div class="cleckfix"></div>
-                <div class='col-md-4'>
-                    <select name="province" id="" class="form-control ">
-                        <option value="">请选择</option>
-                    </select>
+
+            <form action="/addresses" method="post">
+                <div class="row col-md-10" style="margin-left:5px;">
+                    <div class="cart-title f16 tit-family pl10 mt10">添加新地址</div>
+                    @if(session('msg'))
+                    <div class="alert alert-warning alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        {{session('msg')}}
+                    </div>
+                    @endif
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="name" class="control-label">姓名</label>
+                            <div class="">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="姓名">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="mobile" class="control-label">联系电话</label>
+                            <div class="">
+                                <input type="text" class="form-control" id="mobile" name="phone" placeholder="联系电话">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="address" class="control-label">地址</label>
+                            <div class="cleckfix"></div>
+                            <div class='col-md-4'>
+                                <select name="province" id="" class="form-control ">
+                                    <option value="">请选择</option>
+                                </select>
+                            </div>
+                            <div class='col-md-4'>
+                                <select name="city" id="" class="form-control ">
+                                    <option value="">请选择</option>
+                                </select>
+                            </div>
+                            <div class='col-md-4'>
+                                <select name="xian" id="" class="form-control ">
+                                    <option value="">请选择</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-top:20px;">
+                            <label for="mobile" class="control-label">详细地址</label>
+                            <div class="">
+                                <input type="text" class="form-control" id="mobile" name="detail" placeholder="详细地址">
+                            </div>
+                        </div>
+                        {{csrf_field()}}
+                        
+                        <button type="submit" class="btn btn-danger btn-lg mr20 col-md-12">立即添加</button>
+                    </div>
                 </div>
-                <div class='col-md-4'>
-                    <select name="city" id="" class="form-control ">
-                        <option value="">请选择</option>
-                    </select>
-                </div>
-                <div class='col-md-4'>
-                    <select name="xian" id="" class="form-control ">
-                        <option value="">请选择</option>
-                    </select>
-                </div>
-            </div>
-            <div class="form-group" style="margin-top:20px;">
-                <label for="mobile" class="control-label">详细地址</label>
-                <div class="">
-                    <input type="text" class="form-control" id="mobile" name="detail" placeholder="详细地址">
-                </div>
-            </div>
-            {{csrf_field()}}
-            
-            <button type="submit" class="btn btn-danger btn-lg mr20 col-md-12">立即添加</button>
-        </div>
-    </div>
-</form>
-</div>      
+            </form>
+            </div> 
+        </div>     
 @endsection
 
 @section('bottom')
@@ -160,19 +222,6 @@ $('select[name=city]').change(function(){
     })
 });
 
-$('.del').click(function(){
-    var cid = $(this).attr('cid');
-    var tr = $(this).parents('tr');
-
-    $.ajax({
-        type:'get',
-        url:'/address/delete',
-        data:{'cid':cid},
-        success:function(data){
-            console.log(data);
-        }
-    })
-})
 $('.tables').hover(function(){
     $(this).addClass('active');
 },function(){
@@ -181,7 +230,6 @@ $('.tables').hover(function(){
     $('.tables').removeClass('cur');
     $(this).addClass('cur');
 })
-//     tr.fadeOut(300);
 </script>
 @endsection
 

@@ -36,100 +36,34 @@
                 <div class="widget mb10">
                     <h5 class="widget-tit pl10 fb">销量排行榜</h5>
                     <ul class="widget-list-2">
+                        @foreach($hot as $k=>$v)
                         <li>
                             <div class="w-list-product pr">
-                                <a href=""><i class="icon-main icon-red-rank ild pa">1</i><img class="pull-left" alt="" src="" /></a>
-                                <div class="summary"><a href="">阿迪达斯adidas女鞋跑步鞋-G61326</a></div>
-                                <div class="price"><b>¥96</b></div>
+                                <a href=""><img class="pull-left" alt="" src="{{$v->img}}" /></a>
+                                <div class="summary"><a href="">{{$v->title}}</a></div>
+                                <div class="price"><b>¥{{$v->spxj}}</b></div>
                             </div>
                         </li>
-                        <li>
-                            <div class="w-list-product pr">
-                                <a href=""><i class="icon-main icon-red-rank ild pa">2</i><img class="pull-left" alt="" src="" /></a>
-                                <div class="summary"><a href="">阿迪达斯adidas女鞋跑步鞋-G61326</a></div>
-                                <div class="price"><b>¥96</b></div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="w-list-product pr">
-                                <a href=""><i class="icon-main icon-red-rank ild pa">3</i><img class="pull-left" alt="" src="" /></a>
-                                <div class="summary"><a href="">阿迪达斯adidas女鞋跑步鞋-G61326</a></div>
-                                <div class="price"><b>¥96</b></div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="w-list-product pr">
-                                <a href=""><i class="icon-main icon-gray-rank ild pa">4</i><img class="pull-left" alt="" src="" /></a>
-                                <div class="summary"><a href="">阿迪达斯adidas女鞋跑步鞋-G61326</a></div>
-                                <div class="price"><b>¥96</b></div>
-                            </div>
-                        </li>
+                        @endforeach
                     </ul>
                 </div>
                 <div class="widget mb10">
                     <h5 class="widget-tit pl10 fb">看看别人买了什么</h5>
                     <ul class="widget-list-2">
+                        @foreach($new as $k=>$v)
                         <li>
                             <div class="w-list-product">
                                 <div class="pull-left other-welt">
                                     <div class="welt-style">最新订单</div>
                                     <a href="">
-                                        <img alt="" src="" /></a>
+                                        <img alt="" src="{{$v->img}}" /></a>
                                 </div>
-                                <div class="summary-20 "><a href="">阿迪达斯adidas女鞋跑步鞋-G61326</a></div>
+                                <div class="summary-20 "><a href="">{{$v->title}}</a></div>
                                 <div class="summary gray-font">b***417于15分钟前购买此商品</div>
                                 <div class="summary-20 red-font">享8折优惠 还减2元</div>
                             </div>
                         </li>
-                        <li>
-                            <div class="w-list-product">
-                                <div class="pull-left other-welt">
-                                    <div class="welt-style">最新订单</div>
-                                    <a href="">
-                                        <img alt="" src="" /></a>
-                                </div>
-                                <div class="summary-20 "><a href="">阿迪达斯adidas女鞋跑步鞋-G61326</a></div>
-                                <div class="summary gray-font">b***417于15分钟前购买此商品</div>
-                                <div class="summary-20 red-font">享8折优惠 还减2元</div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="w-list-product">
-                                <div class="pull-left other-welt">
-                                    <div class="welt-style">最新订单</div>
-                                    <a href="">
-                                        <img alt="" src="" /></a>
-                                </div>
-                                <div class="summary-20 "><a href="">阿迪达斯adidas女鞋跑步鞋-G61326</a></div>
-                                <div class="summary gray-font">b***417于15分钟前购买此商品</div>
-                                <div class="summary-20 red-font">享8折优惠 还减2元</div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="w-list-product">
-                                <div class="pull-left other-welt">
-                                    <div class="welt-style">最新订单</div>
-                                    <a href="">
-                                        <img alt="" src="" /></a>
-                                </div>
-                                <div class="summary-20 "><a href="">阿迪达斯adidas女鞋跑步鞋-G61326</a></div>
-                                <div class="summary gray-font">b***417于15分钟前购买此商品</div>
-                                <div class="summary-20 red-font">享8折优惠 还减2元</div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="widget mb10">
-                    <h5 class="widget-tit pl10 fb"><span class="pull-right f12 pr10 gray-font"><a href="">清除</a></span>浏览记录</h5>
-                    <ul class="widget-list-2">
-                        <li>
-                            <div class="w-list-product">
-                                <a href="">
-                                    <img class="pull-left" alt="" src="" /></a>
-                                <div class="summary"><a href="">阿迪达斯adidas女鞋跑步鞋-G61326</a></div>
-                                <div class="price"><b>¥96</b></div>
-                            </div>
-                        </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
@@ -180,17 +114,14 @@
                         </div>
                         <div class="clearfix"></div>
                     </div>
-
                 </div>
                 <div class="item-detail">
                     <ul class="nav nav-tabs detail-tabs" id="detail-tabs">
                         <li class="active"><a href="#intro" data-toggle="tab">商品介绍</a></li>
-                        <li><a href="#review" data-toggle="tab">商品评价</a></li>
-                        <li><a href="#after" data-toggle="tab">售后保障</a></li>
                     </ul>
                 </div>
                 <div class="tab-pane active" id="intro">
-                    <p>{{$goods->cons}}</p>
+                    <p>{!!$goods->cons!!}</p>
                 </div>
                 <div class="item-review" id="review">
                     <div class="item-title"><span>商品评价</span></div>

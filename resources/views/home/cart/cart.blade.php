@@ -13,7 +13,7 @@
 @endsection
 
 @section('section')
-
+@if(count($goods) > 0)
 <!-- 购物车开始 -->
 <div class="row">
 <form action="/dingdan/info" method="post">
@@ -80,21 +80,23 @@
     </div>
 </form>
 </div>
+@else
 <!-- 购物车结束 -->
 <!-- 购物车为空开始 -->
-<!-- <div class="row">
+<div class="row">
     <div class="col-lg-12">
         <div class="cart-title f16 tit-family pl10 mt10">我的购物车</div>
         <div class="cart-content p30">
-            <div class="pull-left empty-img"><img alt="" src="assets/img/empty-cart.jpg" /></div>
+            <div class="pull-left empty-img"><img alt="" src="/h_assets/img/empty-cart.jpg" /></div>
             <div class="pull-right empty-text tit-family">
                 您的购物车中还没有商品，您现在可以<br />
-                <b class="f14">马上去 <i><a href="">挑选商品</a></i>， 或者查查 <i><a href="">我的订单</a></i></b>
+                <b class="f14">马上去 <i><a href="/index">挑选商品</a></i>， 或者查查 <i><a href="">我的订单</a></i></b>
             </div>
             <div class="clearfix"></div>
         </div>
     </div>
-</div> -->
+</div>
+@endif
 <!-- 购物车为空结束 -->
         
 

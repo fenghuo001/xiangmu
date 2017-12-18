@@ -107,11 +107,6 @@
                             <a href="">评论数 <span class="glyphicon glyphicon-arrow-down"></span></a>
                             <a href="">上架时间 <span class="glyphicon glyphicon-arrow-down"></span></a>
                         </div>
-                        <div class="sort-right pull-right">
-                            <span><b class="red-font mr10">共3541件商品</b> <b class="red-font">1</b>/89</span>
-                            <button type="button" class="btn btn-default btn-xs"><i class="glyphicon glyphicon-chevron-left"></i>上一页</button>
-                            <button type="button" class="btn btn-default btn-xs">下一页<i class="glyphicon glyphicon-chevron-right"></i></button>
-                        </div>
                     </div>
                     <div class="clearfix"></div>
                     <div class="pro-list-show">

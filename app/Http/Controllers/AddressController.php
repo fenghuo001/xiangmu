@@ -104,7 +104,12 @@ class AddressController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = DB::table('address')->where('id',$id)->delete();
+        if($data){
+            return back()->with('msg','删除成功');
+        }else{
+            return back()->with('msg','删除失败');
+        }
     }
 
     public function getarea(Request $request)
@@ -112,10 +117,5 @@ class AddressController extends Controller
         $pid = $request->pid;
         $province = DB::table('areas')->where('area_parent_id',$pid)->get();
         return $province->toJson();
-    }
-    public function delete(Request $request)
-    {
-        $id = $request->input('cid');
-        echo $id;
     }
 }

@@ -46,9 +46,10 @@ Route::group(['middleware'=>'login'], function(){
 	//订单
 	Route::resource('dingdan','DingdanController');
 	Route::post('/dingdan/info','DingdanController@info');
+
+	Route::get('/center','UserController@center');
 });
 // --------------------------------------------
-Route::get('/center','UserController@center');
 
 Route::get('/index','HomeController@index');
 Route::get('/liebiao','HomeController@liebiao');

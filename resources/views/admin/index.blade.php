@@ -42,7 +42,7 @@
         </nav>
     
         @include('layouts.header')
-        //后台轮播图
+        
         <div id="page-wrapper">
             <div id="page-inner">
                 <div class="row"> 

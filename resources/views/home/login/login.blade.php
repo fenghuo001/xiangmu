@@ -14,6 +14,11 @@
                 <!-- 左侧广告位 -->
                 <img alt="" src="/h_assets/img/advertise/login-ban.gif" />
             </div>
+            @if(session('msg'))
+            <div class="alert alert-info col-lg-4" style="margin-top:10px;">
+               {{session('msg')}}
+            </div>
+            @endif
             <div class="col-lg-4">
                 <!-- 登录表单开始 -->
                 <form role="form" class="login-form f14" method="post" action="/login">

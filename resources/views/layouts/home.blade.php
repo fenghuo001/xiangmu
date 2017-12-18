@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     @section('title')
-    <title>首页</title>
+    <title>传智-首页</title>
     @show
     <link href="/h_assets/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
     <link href="/h_assets/css/style.css" rel="stylesheet" />
@@ -31,7 +31,7 @@
                         <li><a href="/address">个人中心</a> | </li>
                         <li><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=27102514&amp;site=qq&amp;menu=yes">客服服务</a> | </li>
                         <li><a href="sitemap.html">网站导航</a> |&nbsp;&nbsp;&nbsp;&nbsp;</li>
-                        <li class="tel-num"><i class="icon-main icon-tel mt8 mr5"></i>8888-888-888</li>
+                        <li class="tel-num"><i class="icon-main icon-tel mt8 mr5"></i>155-5555-5555</li>
                     </ul>
                 </div>
             </div>

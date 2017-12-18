@@ -74,10 +74,17 @@ class GoodsController extends Controller
     {
         $navs = DB::table('navs')->where(['ztid'=>1])->get();
         $goods = DB::table('goods')->where('id',$id)->first();
+        $hot = DB::table('goods')->where(['hot'=>1])->get();
+        foreach ($hot as $key => $value) {
+            $value->img = DB::table('goods_img')->where('spid',$value->id)->value('imgs');
+        }
+        // dd($hot);
+        $new = DB::table('goods')->where(['new'=>1])->get();
+        foreach ($new as $key => $value) {
+            $value->img = DB::table('goods_img')->where('spid',$value->id)->value('imgs');
+        }
         $goods_img = DB::table('goods_img')->where('spid',$id)->get();
-
-        // dd($navs);
-        return view('home.xiangqing.xiangqing',compact('navs','goods','goods_img'));
+        return view('home.xiangqing.xiangqing',compact('navs','goods','goods_img','hot','new'));
     }
 
     /**
@@ -101,7 +108,7 @@ class GoodsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //dd($request->all());die;
+        //dd($request->all());
         $date = $request->except(['_token','_method']);
         // dd($date);
         if(DB::table('goods')->where('id',$id)->update($date)){

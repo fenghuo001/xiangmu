@@ -6,22 +6,6 @@
 @endsection
 @section('zhuti')
 
-<form action="/nav">
-	<div class="col-sm-6 text-left" style="margin-bottom:15px; margin-left:20px;"> 
-	每页显示
-		<select name="num">
-			<option value="10">10</option>
-			<option value="25">25</option>
-			<option value="50">50</option>
-			<option value="100">100</option>
-		</select>
-	条
-	</div>
-	<div class="col-smm-6 text-right">
-		<input type="text">&nbsp;
-		<button type="submit" style="margin-right:30px;" aria-controls="datatable-example">搜索</button>	
-	</div>
-</form>
 <div class="col-lg-12 col-md-12 col-sm-12">
 <div class="table-responsive">
     <table class="table table-striped table-bordered table-hover">			
@@ -43,7 +27,11 @@
                 <td>{{$v->title}}</td>
                 <td>{{$v->links}}</td>
                 <td>{{$v->addtime}}</td>
-                <td>{{$v->ztid}}</td>
+                <td>
+                    @if($v->ztid == 1)已运行
+                    @elseif($v->ztid == 0)未运行
+                    @endif
+                </td>
                 
                 <td style="width:150px;"><a class="btn btn-info btn-sm pull-left" href="/nav/{{$v->id}}/edit">修改</a>
 				<form action="/nav/{{$v->id}}" method="post" class="del">

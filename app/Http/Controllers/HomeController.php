@@ -13,8 +13,14 @@ class HomeController extends Controller
         $cuxiao = DB::table('goods')->where(['pid_fir'=>1,'pid_sec'=>1])->get();
         $jieri = DB::table('goods')->where('pid_fir',2)->get();
         $goods = DB::table('goods')->where('pid_fir',3)->get();
-        // dd($goods);die;
-    	return view('home.index',compact('info','navs','goods','cuxiao','jieri'));
+        $wen = DB::table('cates')->where('pid',0)->get();
+        foreach($wen as $k=>$c){
+            $c->lian = DB::table('cates')->where('pid',$c->id)->get();
+              foreach($c->lian as $k=>$v){
+                 $v->ccc =DB::table('cates')->where('pid',$v->id)->get();
+                 }
+        }
+    	return view('home.index',compact('info','navs','goods','cuxiao','jieri','wen'));
     }
     public function liebiao()
     {

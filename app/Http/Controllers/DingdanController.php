@@ -14,7 +14,7 @@ class DingdanController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.dingdan.index');
     }
 
     /**
@@ -24,7 +24,9 @@ class DingdanController extends Controller
      */
     public function create()
     {
+
         return view('admin.dingdan.create');
+
     }
 
     /**
@@ -35,6 +37,7 @@ class DingdanController extends Controller
      */
     public function store(Request $request)
     {
+
         $data['addressid'] = $request->addressid;
         $data['userid'] = session('id');
         $data['bm'] = 'ddbm'.rand(1000000,9999999);
@@ -57,6 +60,7 @@ class DingdanController extends Controller
             return back()->whit('msg','创建订单失败');
         }
         // dd($request->all());
+
     }
 
     public function info(Request $request)
@@ -86,8 +90,11 @@ class DingdanController extends Controller
                 $total += $goods->num * $goods->spxj;
             }
         }
-        // dd($goodsData);
+        
         return view('home.dingdan.info',compact('address','goodsData','total'));
+
+
+
 
     }
 
@@ -135,10 +142,26 @@ class DingdanController extends Controller
     {
         //
     }
+
+
+
+
     public function getarea(Request $request)
     {
         $pid = $request->pid;
         $province = DB::table('areas')->where('area_parent_id',$pid)->get();
         return $province->toJson();
     }
+
+    public function rding(Request $request)
+    {
+        //确认订单页面
+        
+        // dd($request->all());
+        //
+        
+        //
+    }
+
+
 }

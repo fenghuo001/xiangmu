@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
-class NavController extends Controller
+
+class DingdansController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,9 +14,8 @@ class NavController extends Controller
      */
     public function index()
     {
-        $navs = DB::table('navs')->get();
-        
-        return view('admin.nav.index',compact('navs'));
+        $data = DB::table('dingdan')->get();
+        return view('admin.dingdans.index',compact('data'));
     }
 
     /**
@@ -25,7 +25,7 @@ class NavController extends Controller
      */
     public function create()
     {
-        return view('admin.nav.create');
+        //
     }
 
     /**
@@ -36,14 +36,7 @@ class NavController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->except(['_token'] );
-        $data['addtime'] = date('Y-m-d H:i:s');
-        $res = DB::table('navs')->insert($data);
-        if($res){
-            return redirect('/nav')->with('msg','添加成功');
-        }else{
-            return back()->with('msg','添加失败');
-        }
+        //
     }
 
     /**
@@ -65,8 +58,7 @@ class NavController extends Controller
      */
     public function edit($id)
     {
-        $navs = DB::table('navs')->where('id',$id)->first();
-        return view('admin.nav.edit',['navs'=>$navs]);
+        //
     }
 
     /**
@@ -78,13 +70,7 @@ class NavController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $request->except(['_token','_method']);
-        $res = DB::table('navs')->where('id',$id)->update($data);
-        if($res){
-            return redirect('/nav')->with('msg','更新成功');
-          }else{
-            return back()->with('msg','更新失败');
-          }
+        //
     }
 
     /**
@@ -95,11 +81,6 @@ class NavController extends Controller
      */
     public function destroy($id)
     {
-        $data = DB::table('navs')->where('id',$id)->delete();
-        if($data){
-            return back()->with('msg','删除成功');
-        }else{
-            return back()->with('msg','删除失败');
-        }
+        //
     }
 }

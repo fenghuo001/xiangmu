@@ -16,10 +16,12 @@ class CateController extends Controller
     {        
         $cates = DB::select("select id,name,pid,concat(path,'_',id) as path from cates order by path");       
         foreach ($cates as $key=>&$val){
-            $count = count(explode('_',$val->path))-1;
+            $count = count(explode('_',$val->path))-2;
             $val->name = str_repeat('|----', $count).$val->name;
         }
-        return view('admin.cate.index',['cates'=>$cates]);
+
+        
+        return view('admin.cate.index',compact('cates',));
     }
 
     /**
@@ -108,6 +110,10 @@ class CateController extends Controller
         }else{
             return back()->with('msg','删除失败');
         }
+
+    }
+    public function xunhuan()
+    {
 
     }
 }

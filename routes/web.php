@@ -31,7 +31,8 @@ Route::group(['middleware'=>'login'], function(){
     Route::resource('goods','GoodsController');
     //导航管理
     Route::resource('nav','NavController');
-    
+    //订单管理
+    Route::resource('dingdans','DingdansController');
     //购物车
 	Route::post('/cart','CartController@store');
 	Route::get('/cart','CartController@cart');

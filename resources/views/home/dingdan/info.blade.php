@@ -38,6 +38,37 @@
 <div class="row">
     <div class="col-lg-12">
         <div class="cart-title f16 tit-family pl10 mt10">商品清单</div>
+
+       
+            <div class="cart-content">
+                <table width="100%" border="0">
+                    <tbody>
+                        <tr>
+                            <td width="45%" class="tr-title">商品名称</td>
+                            <td width="7%" class="tr-title">积分</td>
+                            <td width="12%" class="tr-title">金额</td>
+                            <td width="11%" class="tr-title">优惠</td>
+                            <td width="12%" class="tr-title">数量</td>
+                        </tr>
+                        @foreach($goodsData as $k=>$v)
+                        <tr>
+                            <td width="45%" class="tr-list">
+                                <a href="">
+                                    <img class="pull-left" alt="" src="{{$v->pic}}"></a>
+                                <div class="summary blue-font"><a href="">{{$v->title}}</a></div>
+                            </td>
+                            <td width="7%" class="tr-list"><b>0</b></td>
+                            <td width="12%" class="tr-list"><b class="orange-font">￥{{$v->spxj}} </b></td>
+                            <td width="11%" class="tr-list">减￥0.00</td>
+                            <td width="12%" class="tr-list">{{$v->num}}</td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+
+            </div>
+        
+
         <div class="cart-content">
             <table width="100%" border="0">
                 <tbody>
@@ -65,6 +96,7 @@
                 </tbody>
             </table>
         </div>
+
     </div>
     <div class="col-lg-12 main-show mb10">
         <div class="total tr"><b>总计（不含运费）：</b> <i class="orange-font f20 tit-family pr10">￥{{$total}}</i></div>
